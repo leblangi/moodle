@@ -1,0 +1,11 @@
+.que.fileanalysis {
+	/*display:none !important;*/
+}
+.que.fileanalysis .answer {
+    padding: 0.3em;
+    width: auto;
+    display: inline;
+}
+.que.fileanalysis .answer input {
+    width: 80%;
+}
