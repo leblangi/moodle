@@ -85,9 +85,10 @@ if (!$adminediting) {
         echo $OUTPUT->heading($strcategories);
         echo $OUTPUT->skip_link_target();
         echo $OUTPUT->box_start('categorybox');
+        // [MDLUM-1551] Deplacer le champ de recherche en haut de la liste des cours
+        print_course_search();
         print_whole_category_list();
         echo $OUTPUT->box_end();
-        print_course_search();
     } else {
         $PAGE->navbar->add($strfulllistofcourses);
         $PAGE->set_title("$site->shortname: $strfulllistofcourses");

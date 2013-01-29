@@ -196,12 +196,12 @@ function tag_print_management_box($tag_object, $return=false) {
  */
 function tag_print_search_box($return=false) {
     global $CFG, $OUTPUT;
-
+	// [MDLUM-1535] - Personnaliser l'apparence des éléments d'interface pour le thème StudiUM
     $output = $OUTPUT->box_start('','tag-search-box');
     $output .= '<form action="'.$CFG->wwwroot.'/tag/search.php" style="display:inline">';
     $output .= '<div>';
     $output .= '<input id="searchform_search" name="query" type="text" size="40" />';
-    $output .= '<button id="searchform_button" type="submit">'. get_string('search', 'tag') .'</button><br />';
+    $output .= '<button id="searchform_button" type="submit" title="'.get_string('search', 'tag').'">'. get_string('search', 'tag') .'</button><br />';
     $output .= '</div>';
     $output .= '</form>';
     $output .= $OUTPUT->box_end();

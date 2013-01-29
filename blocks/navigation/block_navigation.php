@@ -195,6 +195,9 @@ class block_navigation extends block_base {
         
         // Grab the items to display
         $renderer = $this->page->get_renderer('block_navigation');
+        if (empty($this->content)) {
+            $this->content = new stdClass();
+        }
         $this->content->text = $renderer->navigation_tree($navigation, $expansionlimit, $options);
 
         // Set content generated to true so that we know it has been done

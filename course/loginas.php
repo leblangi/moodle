@@ -60,11 +60,11 @@ if (has_capability('moodle/user:loginas', $systemcontext)) {
 }
 
 /// Login as this user and return to course home page.
-$oldfullname = fullname($USER, true);
+// [MDLUM-1294] - Sécurité - Journaliser les connections en tant que
 session_loginas($userid, $context);
 $newfullname = fullname($USER, true);
 
-add_to_log($course->id, "course", "loginas", "../user/view.php?id=$course->id&amp;user=$userid", "$oldfullname -> $newfullname");
+add_to_log($course->id, "course", "loginas", "../user/view.php?id=$course->id&amp;user=$userid", 'userid: ' . session_get_realuser()->id);
 
 $strloginas    = get_string('loginas');
 $strloggedinas = get_string('loggedinas', '', $newfullname);

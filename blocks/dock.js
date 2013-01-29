@@ -504,11 +504,11 @@ M.core_dock.fixTitleOrientation = function(item, title, text) {
             clockwise = false;
             break;
     }
-
-    if (Y.UA.ie > 7) {
-        // IE8 can flip the text via CSS but not handle SVG
+	// [MDLUM-1992] - Appliquer les modifications proposées pour le thème StudiUM
+    if (Y.UA.ie == 8 || Y.UA.ie == 9) {
+        // IE8 and IE9 can flip the text via CSS but not handle SVG or not correctly
         title.setContent(text);
-        title.setAttribute('style', 'writing-mode: tb-rl; filter: flipV flipH;display:inline;');
+        title.setAttribute('style', 'writing-mode: tb-rl; filter: flipV flipH;display:inline');
         title.addClass('filterrotate');
         return title;
     }
@@ -524,6 +524,7 @@ M.core_dock.fixTitleOrientation = function(item, title, text) {
     // Create the text for the SVG
     var txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     txt.setAttribute('font-size','10px');
+	txt.setAttribute('text-rendering','geometricPrecision');
     if (clockwise) {
         txt.setAttribute('transform','rotate(90 '+(qwidth/2)+' '+qwidth+')');
     } else {
@@ -870,6 +871,19 @@ M.core_dock.genericblock.prototype = {
 
         this.cachedcontentnode = node;
 
+		// [MDLUM-1117] - Trier les cours dans la vue d'ensemble des cours (ma page)
+		if (this.cachedcontentnode.hasClass('hidden')) {
+			var cachedcontent = this.cachedcontentnode.one('.content');
+			cachedcontent.setStyle('height','');
+			cachedcontent.setStyle('opacity','');
+			cachedcontent.setStyle('display','');
+		}
+		
+		var sessions = this.cachedcontentnode.all('.block_course_session.hidden .content');
+		sessions.setStyle('height','');
+		sessions.setStyle('opacity','');
+		sessions.setStyle('display','');
+		
         node.replace(Y.Node.getDOMNode(Y.Node.create('<div id="content_placeholder_'+this.id+'" class="block_dock_placeholder"></div>')));
         M.core_dock.holdingarea.append(node);
         node = null;
@@ -945,6 +959,16 @@ M.core_dock.genericblock.prototype = {
         placeholder.replace(this.Y.Node.getDOMNode(this.cachedcontentnode));
         this.cachedcontentnode = this.Y.one('#'+this.cachedcontentnode.get('id'));
 
+		// [MDLUM-1117] - Trier les cours dans la vue d'ensemble des cours (ma page)
+		if (this.cachedcontentnode.hasClass('hidden')) {
+			var cachedcontent = this.cachedcontentnode.one('.content');
+			cachedcontent.setStyle('height','0');
+			cachedcontent.setStyle('opacity','0');
+		}
+		var sessions = this.cachedcontentnode.all('.block_course_session.hidden .content');
+		sessions.setStyle('height','0');
+		sessions.setStyle('opacity','0');
+		
         var commands = this.cachedcontentnode.one('.title .commands');
         if (commands) {
             commands.all('.hidepanelicon').remove();
@@ -953,6 +977,7 @@ M.core_dock.genericblock.prototype = {
         }
         this.cachedcontentnode.one('.title').append(commands);
         this.cachedcontentnode = null;
+		
         M.util.set_user_preference('docked_block_instance_'+this.id, 0);
         this.isdocked = false;
         return true;

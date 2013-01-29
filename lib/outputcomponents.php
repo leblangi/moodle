@@ -2198,6 +2198,17 @@ class block_contents {
     public function add_class($class) {
         $this->attributes['class'] .= ' '.$class;
     }
+	
+	 // [MDLUM-1687] - Ajouter une option pour cacher les éléments non-centraux de l'interface
+	/**
+     * Check if a specific class is applied
+     * @param string $class
+     * @return boolean if the specified class is applied
+     */
+    public function has_class($class) {
+		$classes = explode(" ", $this->attributes['class']);
+		return in_array($class, $classes);
+    }
 }
 
 

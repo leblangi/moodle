@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="question/type/manip/db" VERSION="20120716" COMMENT="XMLDB file for Moodle question/type/manip">
+  <TABLES>
+    <TABLE NAME="question_manip" COMMENT="Options for docx manipulation questions">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="question"/>
+        <FIELD NAME="question" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="regex"/>
+        <FIELD NAME="regex" TYPE="char" LENGTH="255" NOTNULL="true" DEFAULT="//" SEQUENCE="false" PREVIOUS="question" NEXT="minocc" COMMENT="Regular expression used to evaluate whether the operation has been completed as requested"/>
+        <FIELD NAME="minocc" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" PREVIOUS="regex" NEXT="maxocc" COMMENT="Required minimum number of occurrences of the regular expression"/>
+        <FIELD NAME="maxocc" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="true" SEQUENCE="false" PREVIOUS="minocc" NEXT="correct" COMMENT="Maximum number of occurrences of the regular expression"/>
+        <FIELD NAME="correct" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" PREVIOUS="maxocc" NEXT="incorrect"/>
+        <FIELD NAME="incorrect" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" PREVIOUS="correct"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" NEXT="question"/>
+        <KEY NAME="question" TYPE="foreign" FIELDS="question" REFTABLE="question" REFFIELDS="id" PREVIOUS="primary"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
