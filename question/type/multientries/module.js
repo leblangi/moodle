@@ -35,6 +35,7 @@ M.qtype_multientries.questionlist = new Array();
  */
 M.qtype_multientries.init = function (Y, config) {
 	// Paste Events
+    this.Y = Y;
     Y.all("div.que.shortanswer .answer > input").each(function(answerfield) {
         answerfield = answerfield.get("id");
         M.qtype_multientries.questionlist.push(answerfield);
@@ -160,7 +161,7 @@ M.qtype_multientries.displayMessage = function(msg, type, refNode, autoRemove) {
     
     // remove automatically the display message
     if (autoRemove){
-        Y.later(3000, this, function(){msg.remove(true);});
+        this.Y.later(3000, this, function(){msg.remove(true);});
     }
 }
 
