@@ -61,19 +61,16 @@ M.qtype_manip.initUpload = function(Y) {
                 var attachments = node.one('.attachments');
                 var fm = attachments.one('.filemanager');
                 if (fm.hasClass('fm-noitems')) {
-                    // Only reset the state if its not already the case
-                    if (!fm.hasClass("fm-manip-itemcopied")) {
-                        // Hide the fliepicker
-                        fm.addClass("fm-manip-itemcopied");
-                        // Add and show the file copied message
-                        var newMessage = M.str.qtype_manip.filecopiedfromquestion + firstQuestionNode.one(".info .no .qno").get("text");
-                        M.qtype_manip.displayMessage(Y, newMessage, 'success', fm);
-                        // Put the new information in the filepicker
-                        var inputNode = attachments.one("input[type=hidden]");
-                        var nodeName = inputNode.get("name");
-                        oldQuestionAnswers[nodeName] = inputNode.get("value");
-                        inputNode.set('value', firstQuestionNode.one(".attachments input[type=hidden]").get('value'));
-                    }
+                    // Hide the fliepicker
+                    fm.addClass("fm-manip-itemcopied");
+                    // Add and show the file copied message
+                    var newMessage = M.str.qtype_manip.filecopiedfromquestion + firstQuestionNode.one(".info .no .qno").get("text");
+                    M.qtype_manip.displayMessage(Y, newMessage, 'success', fm);
+                    // Put the new information in the filepicker
+                    var inputNode = attachments.one("input[type=hidden]");
+                    var nodeName = inputNode.get("name");
+                    oldQuestionAnswers[nodeName] = inputNode.get("value");
+                    inputNode.set('value', firstQuestionNode.one(".attachments input[type=hidden]").get('value'));
                 }else{
                     allAvailable = false;
                 }
