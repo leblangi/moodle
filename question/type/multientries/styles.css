@@ -1,0 +1,77 @@
+.que.multientries .additionnalinfos {
+    background-color:#EEE;
+	padding:5px;
+}
+.moodle-dialogue-multientries .line-table{margin:0}
+.moodle-dialogue-multientries .line-table, .moodle-dialogue-multientries .tokenbox, .moodle-dialogue-multientries .line_numbers {
+    font-family: Consolas, Courier,monospace;
+    font-size: 12px;
+    line-height: 14px;
+}
+.moodle-dialogue-multientries .line-table td {
+    vertical-align:top;
+	padding:0;
+}
+.moodle-dialogue-multientries .line_numbers {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+	border-right:none;
+    color: #888;
+    cursor: pointer;
+    padding: 0 6px;
+    text-align: right;
+    margin:0;
+}
+.moodle-dialogue-multientries .line_numbers span{
+	display:block;
+}
+.moodle-dialogue-multientries .tokenbox {
+	border: 1px solid #CCC;
+    width:500px;
+    resize:none;
+	margin:0 auto;
+    overflow:hidden;
+}
+.moodle-dialogue-multientries .incorrect {
+    font-weight:bold;
+    color:red;
+}
+.moodle-dialogue-multientries .correct {
+    font-weight:bold;
+    color:green;
+}
+.moodle-dialogue-multientries .msg, .que.multientries .msg {
+    padding:5px;
+	font-size:0.8em;
+    font-weight:bold;
+	position: relative;
+	overflow:auto;
+    margin-bottom:10px;
+}
+.moodle-dialogue-multientries .msg a, .que.multientries .msg a{
+    position:absolute;
+    top:0;
+    right: 0;
+    padding:2px;
+    color:#557755;
+    font-size:0.8em;
+}
+.moodle-dialogue-multientries .msg p, .que.multientries .msg p{
+    margin-bottom:0;
+}
+.moodle-dialogue-multientries .error, .que.multientries .error {
+    border:1px solid #775555;
+    background-color:#FFF0F0;
+    color:#775555;
+}
+.moodle-dialogue-multientries .warning, .que.multientries .warning {
+    border:1px solid #777755;
+    background-color:#FFFFF0;
+    color:#777755;
+}
+.moodle-dialogue-multientries .success, .que.multientries .success {
+    border:1px solid #557755;
+    background-color:#D0FFD0;
+    color:#557755;
+}
+.moodle-dialogue-multientries-confirm .confirmation-message {margin:1em 10px 0.5em}

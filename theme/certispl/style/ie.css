@@ -1,0 +1,279 @@
+/********************************************************
+**
+** Theme name: Splash UdeM
+** Creation Date: 16/03/11
+** Author: Synergy Learning
+** Author URI: http://synergylearning.com
+**
+*********************************************************/
+
+
+/** IE styling */
+
+.ie7 #logobox #site_fullname {line-height: 26px}
+
+.ie6 .block .block_tree {
+	width: 160px;
+	overflow-x: scroll;
+}
+
+.ie6 .block_tree .tree_item {
+	width: 100%;
+}
+
+.ie6 #dock {
+	position: absolute;
+}
+
+.ie6 #dock hr {
+	display: none;
+	margin: 0px;
+	height: 0px;
+	padding: 0px;
+}
+
+.ie6 #dock li p {
+	background-color: inherit;
+}
+
+.ie #dock .bd.oversized_content .content {
+	padding-bottom: 0px;
+}
+
+.ie.block_js_expansion.mouseover .content {
+	padding-bottom: 2px;
+}
+
+.ie #dock .bd.oversized_content {
+	width: 100%;
+}
+
+.ie7 #dockeditempanel, .ie8 #dockeditempanel {
+	border:1px solid #656565;
+	margin-left:-1px;
+}
+
+.ie6 .red-theme, .ie6 .blue-theme, .ie6 .green-theme, .ie6 .orange-theme,
+.ie7 .red-theme, .ie7 .green-theme, .ie7 .blue-theme, .ie7 .orange-theme {
+	margin-top:3px;
+}
+
+.ie #custommenu .yui3-menu-horizontal.javascript-disabled .custom_menu_submenu .yui3-menu-content,
+.ie #custommenu .custom_menu_submenu .yui3-menu-content {
+	overflow:visible;
+}
+
+.ie7 #custommenu, .ie8 #custommenu{
+	padding-top: 15px;
+}
+
+.ie7 .loginpanel, .ie8 .loginpanel{
+	padding-top: 20px;
+}
+
+.ie.editing .modtype_label .mod-indent .no-overflow p {
+	margin-bottom:expression(this.nextSibling==null? 0:'inherit');
+}
+
+.ie7 div#murmitoyen, .ie8 div#murmitoyen {margin-top:0}
+
+.ie.path-backup .mform .fitem fieldset.felement {
+	float:none;
+}
+
+.ie7 .block_action,
+.ie8 .block_action {
+	clear:both
+}
+
+.ie7 .block,
+.ie8 .block {
+	overflow:auto
+}
+
+.ie7 #colourswitcher {
+	position:relative;
+	z-index:10000;
+}
+
+.ie7 #region-main-wrap .block_course_session,
+.ie8 #region-main-wrap .block_course_session {
+	border:1px solid #CCC;
+	border-top:none;
+}
+
+.ie7 .confirmation-buttons input {
+	width:auto;
+	overflow: visible;
+	text-align:center;
+	margin:0 2px;
+}
+
+.ie7 #colourselector, .ie8 #colourselector {
+	border:1px solid #CCC;
+	border-width:0 1px 1px 0;
+}
+
+.ie7 .tableau1 td, .ie8 .tableau1 td,
+.ie7 .tableau2 td, .ie8 .tableau2 td {
+	border-bottom: 1px solid #F7F7F7;
+}
+
+.ie7 table.tableau1, .ie8 table.tableau1, .ie9 table.tableau1,
+.ie7 table.tableau2, .ie8 table.tableau2, .ie9 table.tableau2 {
+	border-collapse:collapse;
+}
+
+.ie7 .tableau1 td, .ie7 .tableau1 th, .ie8 .tableau1 td, .ie8 .tableau1 th, .ie9 .tableau1 td, .ie9 .tableau1 th,
+.ie7 .tableau2 td, .ie7 .tableau2 th, .ie8 .tableau2 td, .ie8 .tableau2 th, .ie9 .tableau2 td, .ie9 .tableau2 th {
+	border-left: none;
+}
+
+/********************* Styles des boutons *******************************/
+
+.ie7 button, input[type=button], .ie7 input[type=submit] {
+	overflow:visible;
+	position:relative;
+}
+
+.ie7 form input[type=text],
+.ie7 form input[type="password"],
+.ie7 form input[type="checkbox"],
+.ie7 form input[type="radio"],
+.ie7 form textarea,
+.ie7 select,
+.ie8 form input[type=text],
+.ie8 form input[type="password"],
+.ie8 form input[type="checkbox"],
+.ie8 form input[type="radio"],
+.ie8 form textarea,
+.ie8 select {
+	position:relative;
+	behavior: url([[shim:local|PIE]]);
+}
+
+/*Par défaut*/
+.ie7 button, .ie7 input[type=button], .ie7 input[type=submit], .ie7.yui-skin-sam .yui-button.default button, .ie7.yui-skin-sam .yui-button.yui-button-checked button, .ie7 .gradingform_rubric.editor .addlevel input, .ie7 .gradingform_rubric.editor .addcriterion input,
+.ie8 button, .ie8 input[type=button], .ie8 input[type=submit], .ie8.yui-skin-sam .yui-button.default button, .ie8.yui-skin-sam .yui-button.yui-button-checked button, .ie8 .gradingform_rubric.editor .addlevel input, .ie8 .gradingform_rubric.editor .addcriterion input,
+.ie9 button, .ie9 input[type=button], .ie9 input[type=submit], .ie9.yui-skin-sam .yui-button.default button, .ie9.yui-skin-sam .yui-button.yui-button-checked button, .ie9 .gradingform_rubric.editor .addlevel input, .ie9 .gradingform_rubric.editor .addcriterion input {
+	background-color:#0D70C4;
+	background-position:0 -755px;
+}
+
+.ie8 button, .ie8 input[type=button], .ie8 input[type=submit], .ie8.yui-skin-sam .yui-button.default button, .ie8.yui-skin-sam .yui-button.yui-button-checked button {
+	max-width:none;
+}
+
+.ie7 button:hover, .ie7 input[type=button]:hover, .ie7 input[type=submit]:hover, .ie7.yui-skin-sam .yui-button.yui-button-hover.default button, .ie7.yui-skin-sam .yui-button.yui-button-checked.yui-button-hover button, .ie7 .gradingform_rubric.editor .addlevel input:hover, .ie7 .gradingform_rubric.editor .addcriterion input:hover,
+.ie8 button:hover, .ie8 input[type=button]:hover, .ie8 input[type=submit]:hover, .ie8.yui-skin-sam .yui-button.yui-button-hover.default button, .ie8.yui-skin-sam .yui-button.yui-button-checked.yui-button-hover button, .ie8 .gradingform_rubric.editor .addlevel input:hover, .ie8 .gradingform_rubric.editor .addcriterion input:hover,
+.ie9 button:hover, .ie9 input[type=button]:hover, .ie9 input[type=submit]:hover, .ie9.yui-skin-sam .yui-button.yui-button-hover.default button, .ie9.yui-skin-sam .yui-button.yui-button-checked.yui-button-hover button, .ie9 .gradingform_rubric.editor .addlevel input:hover, .ie9 .gradingform_rubric.editor .addcriterion input:hover {
+	background-color:#094D88;
+	background-position:0 -729px;
+}
+
+/* Boutons d'annulation */
+.ie7 input.alternate[type=submit], .ie7 input[type][value*=Annuler], .ie7 input[type][value*=Cancel], .ie7 button[class*=cancel], .ie7 input[type=submit][name=cancel], .ie7 input.cancel[type=button], .ie7.yui-skin-sam .yui-button button,
+.ie8 input.alternate[type=submit], .ie8 input[type][value*=Annuler], .ie8 input[type][value*=Cancel], .ie8 button[class*=cancel], .ie8 input[type=submit][name=cancel], .ie8 input.cancel[type=button], .ie8.yui-skin-sam .yui-button button,
+.ie9 input.alternate[type=submit], .ie9 input[type][value*=Annuler], .ie9 input[type][value*=Cancel], .ie9 button[class*=cancel], .ie9 input[type=submit][name=cancel], .ie9 input.cancel[type=button], .ie9.yui-skin-sam .yui-button button {
+	background-color:#FCFCFC;
+	background-position:0 -746px;
+}
+.ie7 input.alternate[type=submit]:hover, .ie7 input[type][value*=Annuler]:hover, .ie7 input[type][value*=Cancel]:hover, .ie7 button[class*=cancel]:hover, .ie7 input[type=submit][name=cancel]:hover, .ie7 input.cancel[type=button]:hover, .ie7.yui-skin-sam .yui-button.yui-button-hover button,
+.ie8 input.alternate[type=submit]:hover, .ie8 input[type][value*=Annuler]:hover, .ie8 input[type][value*=Cancel]:hover, .ie8 button[class*=cancel]:hover, .ie8 input[type=submit][name=cancel]:hover, .ie8 input.cancel[type=button]:hover, .ie8.yui-skin-sam .yui-button.yui-button-hover button,
+.ie9 input.alternate[type=submit]:hover, .ie9 input[type][value*=Annuler]:hover, .ie9 input[type][value*=Cancel]:hover, .ie9 button[class*=cancel]:hover, .ie9 input[type=submit][name=cancel]:hover, .ie9 input.cancel[type=button]:hover, .ie9.yui-skin-sam .yui-button.yui-button-hover button {
+	background-color:#c6c9cc;
+}
+
+/* État des boutons désactivés */
+.ie7 button[disabled], .ie7 input[type=button][disabled], .ie7 input[type=submit][disabled], .ie7 input#id_cancel[disabled], .ie7.yui-skin-sam .yui-button.yui-button-disabled button,
+.ie8 button[disabled], .ie8 input[type=button][disabled], .ie8 input[type=submit][disabled], .ie8 input#id_cancel[disabled], .ie8.yui-skin-sam .yui-button.yui-button-disabled button,
+.ie9 button[disabled], .ie9 input[type=button][disabled], .ie9 input[type=submit][disabled], .ie9 input#id_cancel[disabled], .ie9.yui-skin-sam .yui-button.yui-button-disabled button {
+	background-color: #E6E6E6;
+	border-color:#CFCFCF;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+.ie8 .searchform button:active,
+.ie8 .bibsearchform input[type=submit]:active,
+.ie8 .blogsearchform input[type=submit]:active,
+.ie8 .adminsearchform input[type=submit]:active {
+	background-position: 8px 4px;
+}
+
+.ie8 #personsearch input[type=submit]:active,
+.ie8 .coursesearchbox input[type=submit]:active,
+.ie8 #tag-search-box button:active {
+	background-position: 8px 7px;
+}
+
+.ie8 .searchform button, .ie9 .searchform button,
+.ie8 .bibsearchform input[type=submit], .ie9 .bibsearchform input[type=submit],
+.ie8 .blogsearchform input[type=submit], .ie9 .blogsearchform input[type=submit],
+.ie8 .adminsearchform input[type=submit], .ie9 .adminsearchform input[type=submit],
+.ie8 .searchform button:hover, .ie9 .searchform button:hover,
+.ie8 .bibsearchform input[type=submit]:hover, .ie9 .bibsearchform input[type=submit]:hover,
+.ie8 .blogsearchform input[type=submit]:hover, .ie9 .blogsearchform input[type=submit]:hover,
+.ie8 .adminsearchform input[type=submit]:hover, .ie9 .adminsearchform input[type=submit]:hover {
+	background-position: center;
+}
+
+.ie8 #personsearch input[type=submit], .ie9 #personsearch input[type=submit],
+.ie8 .coursesearchbox input[type=submit], .ie9 .coursesearchbox input[type=submit],
+.ie8 #tag-search-box button, .ie9 #tag-search-box button,
+.ie8 #personsearch input[type=submit]:hover, .ie9 #personsearch input[type=submit]:hover,
+.ie8 .coursesearchbox input[type=submit]:hover, .ie9 .coursesearchbox input[type=submit]:hover,
+.ie8 #tag-search-box button:hover, .ie9 #tag-search-box button:hover {
+	background-position: 6px center;
+}
+
+.ie7 .breadcrumb .sep, .ie8 .breadcrumb .sep {display:block}
+.ie7 .breadcrumb li a, .ie7 .breadcrumb li span, .ie8 .breadcrumb li a, .ie8 .breadcrumb li span {padding-left:5px;padding-right:5px;}
+
+.ie7 .gradingform_rubric.editor .delete input, .ie7 .gradingform_rubric.editor .moveup input, .ie7 .gradingform_rubric.editor .movedown input,
+.ie8 .gradingform_rubric.editor .delete input, .ie8 .gradingform_rubric.editor .moveup input, .ie8 .gradingform_rubric.editor .movedown input,
+.ie9 .gradingform_rubric.editor .delete input, .ie9 .gradingform_rubric.editor .moveup input, .ie9 .gradingform_rubric.editor .movedown input {
+	background-color:transparent;
+}
+
+/* Moodle dialog
+---------------------------*/
+.ie7 .moodle-dialogue-hd .yui3-widget-hd, .ie8 .moodle-dialogue-hd .yui3-widget-hd,
+.ie7 #filesskin .yui3-widget-hd, .ie8 #filesskin .yui3-widget-hd,
+.ie7 .moodle-dialogue-base .moodle-dialogue, .ie8 .moodle-dialogue-base .moodle-dialogue {border:1px solid #666 !important}
+
+.ie7 .chooserdialogue .moodle-dialogue-hd, .ie8 .chooserdialogue .moodle-dialogue-hd, .ie9 .chooserdialogue .moodle-dialogue-hd,
+.ie7 #filesskin .yui3-widget-hd, .ie8 #filesskin .yui3-widget-hd {filter:none !important;}
+
+.ie.yui3-skin-sam .yui3-panel .yui3-widget-hd .yui3-button-close {
+	background-image:url([[pix:theme|closebutton]]);
+	width: 25px;
+	height:15px;
+	border:none;
+	font-size: 0;
+    line-height: 0;
+    letter-spacing: -1000px;
+    color: #86A5EC;
+}
+
+.ie.yui3-skin-sam .yui3-panel .yui3-widget-hd .yui3-widget-buttons {
+	padding: 5px 8px 3px;
+}
+
+.ie.yui3-skin-sam .yui3-panel .yui3-widget-hd .yui3-button-close:before {
+	display:none;
+}
+/* Emphase sur un texte
+---------------------------*/
+.ie7 .textemphasis, .ie8 .textemphasis, .ie9 .textemphasis {background-color:#FF0}
+
+/* Puce pour vieux fureteurs
+---------------------------*/
+.ie7 .region-content .studium_accueil .conteneur ul li, .ie7 .studium_nouveaute ul li {
+	list-style-type:disc;
+	padding-left:0;
+	margin-left:22px;
+}
+
+/* Puce pour vieux fureteurs
+---------------------------*/
+.ie7 input[type=file], .ie8 input[type=file], .ie9 input[type=file] {padding:2px 1px 4px}

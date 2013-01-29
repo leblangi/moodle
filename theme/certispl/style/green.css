@@ -1,0 +1,369 @@
+/********************************************************
+**
+** Theme name: Splash Certitude v.3
+** Creation Date: 16/03/11
+** Author: Gilles-Philippe Leblanc - University of Montreal
+** Author URI: http://www.umontreal.ca
+**
+*********************************************************/
+
+/* Custom Menu
+-----------------------*/
+.certispl-green #logobox #site_fullname {color: #418000}
+
+.certispl-green #dropdownmenu {background-position:0 -195px}
+
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul {
+	border-bottom:1px solid #d5e1d7;
+}
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul > li {
+ border-right: 1px solid #d5e1d7;
+}
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul > li:last-child,
+.certispl-green #custom_menu_1 > .custom_menu_submenu > ul > li {
+	border:none;
+}
+
+.certispl-green #custommenu .javascript-disabled .custom_menu_submenu .yui3-menu-content,
+.certispl-green #custommenu .custom_menu_submenu .yui3-menu-content,
+.certispl-green .tableau2 th {
+	background: url([[pix:theme|sprite_v]]) repeat-x scroll 0 -387px #6dd600;
+	background: -moz-linear-gradient(top, #6dd600 0%, #316900 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6dd600), color-stop(100%,#316900));
+	background: -webkit-linear-gradient(top, #6dd600 0%,#316900 100%);
+	background: -o-linear-gradient(top, #6dd600 0%,#316900 100%);
+	background: linear-gradient(top, #6dd600 0%,#316900 100%);
+	border-color:#525c36;
+	border-top-color:#6dd600;
+}
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label,
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menuitem-content{
+	color:#418000;
+}
+
+.certispl-green #custom_menu_1.javascript-disabled > .yui3-menu-content > ul > .yui3-menuitem-current.yui3-menuitem-active > .yui3-menuitem-content,
+.certispl-green #custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content .yui3-menuitem-active .yui3-menuitem-content,
+.certispl-green #custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content a.yui3-menuitem-content:hover,
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current.yui3-menuitem-active > .yui3-menuitem-content,
+.certispl-green #custommenu .yui3-menu-content .yui3-menuitem-active .yui3-menuitem-content {
+	color:#FFF;
+	background:#6dd600;
+}
+
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label-active,
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label-menuvisible,
+.certispl-green #custommenu .yui3-menu-content .yui3-menu-label-active,
+.certispl-green #custommenu .yui3-menu-horizontal.javascript-disabled li:hover a.yui3-menu-label,
+.certispl-green #custommenu .yui3-menu-content .yui3-menu-label-menuvisible {
+	color:#FFF;
+	background-color:#6dd600;
+	border:1px solid #6dd600;
+}
+.certispl-green #custommenu .yui3-menu-horizontal.javascript-disabled li:hover a.yui3-menu-label,
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label-active,
+.certispl-green #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label-menuvisible {
+	border-top-color:#1c4c59;
+	border-left-color:#1c4c59;
+	border-right-color:#1c4c59;
+}
+.certispl-green #custommenu .yui3-menu-content .yui3-menu-label-menuvisible {
+	border-color:#525c36;
+}
+.certispl-green #custommenu .custom_menu_submenu .yui3-menu-label {
+	border:1px;
+}
+.certispl-green #custommenu .custom_menu_submenu .yui3-menu-label-active,
+.certispl-green #custommenu .custom_menu_submenu .yui3-menu-label-menuvisible {
+	background-color:#605f5f;
+}
+.certispl-green #custommenu .custom_menu_submenu .yui3-menu-label-menuvisible {
+	border-color:#525c36;
+}
+.certispl-green #custommenu .yui3-menu-horizontal.javascript-disabled li:hover .custom_menu_submenu li:hover .yui3-menuitem-content,
+.certispl-green #custommenu .custom_menu_submenu .yui3-menuitem-active .yui3-menuitem-content {
+	background:#fff;
+	text-shadow:none;
+	color:#418000;
+}
+
+.certispl-green #usercontrols .separator {
+	background-color:#d5e1d7;
+}
+
+/* Content
+-----------------------*/
+
+.certispl-green .coursebox{
+	padding-left:5px;
+	border-bottom: 1px dashed #dae0dc;
+}
+
+/* Sideblocks
+-----------------------*/
+
+.certispl-green #report-region-pre .block .header, /*-- report left block header --*/
+.certispl-green #region-pre .block .header, /*-- left block header --*/
+.certispl-green #region-post .block .header { /*-- right block header --*/
+ background-color: #6dd600;
+ height: auto;
+ color: #fff;
+ padding: 12px 0 0;
+}
+
+/* Session
+------------------------*/
+.certispl-green #qtypechoicecontainer.yui-panel .hd,
+.certispl-green #filesskin .yui3-widget-hd,
+.certispl-green .moodle-dialogue-base .moodle-dialogue-hd,
+.certispl-green #region-main-wrap .block.block_course_session .header {background-position:0 -306px !important;}
+
+/* Mini Calendar
+------------------------*/
+.certispl-green .block .minicalendar td.weekend { /* setting weekend date colour */
+	color:#418000;
+}
+
+.certispl-green .block .minicalendar th { /* setting days of weekdays name date colour */ 
+	border-top-color:#6DD600;
+	border-bottom:1px solid #418000;
+	background-position:0 -306px;
+	color:#FFF;
+}
+
+/* Forum
+------------------------*/
+
+.certispl-green .forumpost .topic .subject,
+.certispl-green .path-blog.certispl-green .forumpost .subject a,
+.certispl-green .path-blog.certispl-green .forumpost .subject a:link,
+.certispl-green .path-blog.certispl-green .forumpost .subject a:visited { /* forum subject section inside topic header */
+	font-weight: bold;
+	font-size: 1.1em;
+	padding-left: 5px;
+	background: #6dd600;
+	color: #fff;
+}
+
+/* dock left
+---------------------------*/
+
+.certispl-green #dock.dock.dock_left_vertical { /* background style for dockpanel */
+	background-color: #418000;
+	background-image: -khtml-gradient(linear, right top, left top, from(#6dd600), to(#418000));
+	background-image: -moz-linear-gradient(right, #6dd600, #418000);
+	background-image: -webkit-gradient(linear, right top, left top, color-stop(0%, #6dd600), color-stop(100%, #418000));
+	background-image: -webkit-linear-gradient(right, #6dd600, #418000);
+	background-image: -o-linear-gradient(right, #6dd600, #418000);
+	background-image: -ms-linear-gradient(right, #6dd600, #418000);
+	background-image: linear-gradient(to left, #6dd600, #418000);
+}
+
+#page-mod-quiz-edit.certispl-green  .questionbankwindow div.header,
+.certispl-green #dockeditempanel .dockeditempanel_hd {
+	background-color: #418000;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#6dd600), to(#418000));
+	background-image: -moz-linear-gradient(top, #6dd600, #418000);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6dd600), color-stop(100%, #418000));
+	background-image: -webkit-linear-gradient(top, #6dd600, #418000);
+	background-image: -o-linear-gradient(top, #6dd600, #418000);
+	background-image: -ms-linear-gradient(top, #6dd600, #418000);
+	background-image: linear-gradient(top, #6dd600, #418000);
+}
+
+/*	CSS personnalisé de la page d'accueil */
+
+.certispl-green .studium_accueil .conteneur ul li:before,
+.certispl-green .studium_nouveaute ul li:before {
+	background-position:-14px -87px;
+}
+
+/* Ajout de styles de tableaux personnalisés */
+.certispl-green .tableau2 th {border-color:#316900}
+
+/********************* Styles des boutons *******************************/
+
+.certispl-green.yui-skin-sam .yui-button.default button,
+.certispl-green.yui-skin-sam .yui-button.yui-button-checked button,
+.certispl-green button,
+.certispl-green input[type=button],
+.certispl-green input[type=submit],
+.certispl-green .gradingform_rubric.editor .addlevel input,
+.certispl-green .gradingform_rubric.editor .addcriterion input {
+	background-color: #418000;
+	color:#FFF;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#6dd600), to(#418000));
+	background-image: -moz-linear-gradient(top, #6dd600, #418000);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6dd600), color-stop(100%, #418000));
+	background-image: -webkit-linear-gradient(top, #6dd600, #418000);
+	background-image: -o-linear-gradient(top, #6dd600, #418000);
+	background-image: -ms-linear-gradient(top, #6dd600, #418000);
+	background-image: linear-gradient(top, #6dd600, #418000);
+	border-color: #418000;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.certispl-green #personsearch input[type=submit],
+.certispl-green .coursesearchbox input[type=submit],
+.certispl-green #tag-search-box button,
+.certispl-green .searchform button,
+.certispl-green .bibsearchform input[type=submit],
+.certispl-green .blogsearchform input[type=submit],
+.certispl-green .adminsearchform input[type=submit] {
+	background-image: url([[pix:theme|search]]);
+	background-color:#6dd600;
+}
+
+.certispl-green #personsearch input[type=submit],
+.certispl-green #tag-search-box button,
+.certispl-green .coursesearchbox input[type=submit] {
+	background-image: url([[pix:theme|search_revert]]);
+}
+
+.certispl-green.ie7 button,
+.certispl-green.ie7 input[type=button],
+.certispl-green.ie7 input[type=submit],
+.certispl-green.ie7.yui-skin-sam .yui-button.default button,
+.certispl-green.ie7.yui-skin-sam .yui-button.default.yui-button-focus button,
+.certispl-green.ie7.yui-skin-sam .yui-button.default.yui-button-active button,
+.certispl-green.ie7.yui-skin-sam .yui-button.yui-button-checked button,
+.certispl-green.ie7.yui-skin-sam .yui-button.yui-button-checked.yui-button-focus button,
+.certispl-green.ie7.yui-skin-sam .yui-button.yui-button-checked.yui-button-active button,
+.certispl-green.ie7 .gradingform_rubric.editor .addlevel input,
+.certispl-green.ie7 .gradingform_rubric.editor .addcriterion input,
+.certispl-green.ie8 button,
+.certispl-green.ie8 input[type=button],
+.certispl-green.ie8 input[type=submit],
+.certispl-green.ie8.yui-skin-sam .yui-button.default button,
+.certispl-green.ie8.yui-skin-sam .yui-button.default.yui-button-focus button,
+.certispl-green.ie8.yui-skin-sam .yui-button.default.yui-button-active button,
+.certispl-green.ie8.yui-skin-sam .yui-button.yui-button-checked button,
+.certispl-green.ie8.yui-skin-sam .yui-button.yui-button-checked.yui-button-focus button,
+.certispl-green.ie8.yui-skin-sam .yui-button.yui-button-checked.yui-button-active button,
+.certispl-green.ie8 .gradingform_rubric.editor .addlevel input,
+.certispl-green.ie8 .gradingform_rubric.editor .addcriterion input,
+.certispl-green.ie9 button,
+.certispl-green.ie9 input[type=button],
+.certispl-green.ie9 input[type=submit],
+.certispl-green.ie9.yui-skin-sam .yui-button.default button,
+.certispl-green.ie9.yui-skin-sam .yui-button.default.yui-button-focus button,
+.certispl-green.ie9.yui-skin-sam .yui-button.default.yui-button-active button,
+.certispl-green.ie9.yui-skin-sam .yui-button.yui-button-checked button,
+.certispl-green.ie9.yui-skin-sam .yui-button.yui-button-checked.yui-button-focus button,
+.certispl-green.ie9.yui-skin-sam .yui-button.yui-button-checked.yui-button-active button,
+.certispl-green.ie9 .gradingform_rubric.editor .addlevel input,
+.certispl-green.ie9 .gradingform_rubric.editor .addcriterion input {
+	background-color:#6dd600;
+}
+
+.certispl-green #personsearch input[type=submit]:hover,
+.certispl-green .coursesearchbox input[type=submit]:hover,
+.certispl-green #tag-search-box button:hover,
+.certispl-green .searchform button:hover,
+.certispl-green .bibsearchform input[type=submit]:hover,
+.certispl-green .blogsearchform input[type=submit]:hover,
+.certispl-green .adminsearchform input[type=submit]:hover,
+.certispl-green.ie7 button:hover,
+.certispl-green.ie7 input[type=button]:hover,
+.certispl-green.ie7 input[type=submit]:hover, 
+.certispl-green.ie7.yui-skin-sam .yui-button.default.yui-button-hover button:hover,
+.certispl-green.ie7.yui-skin-sam .yui-button.yui-button-checked.yui-button-hover button:hover,
+.certispl-green.ie7 .gradingform_rubric.editor .addlevel input:hover,
+.certispl-green.ie7 .gradingform_rubric.editor .addcriterion input:hover,
+.certispl-green.ie8 button:hover,
+.certispl-green.ie8 input[type=button]:hover,
+.certispl-green.ie8 input[type=submit]:hover,
+.certispl-green.ie8.yui-skin-sam .yui-button.default.yui-button-hover button:hover,
+.certispl-green.ie8.yui-skin-sam .yui-button.yui-button-checked.yui-button-hover button:hover,
+.certispl-green.ie8 .gradingform_rubric.editor .addlevel input:hover,
+.certispl-green.ie8 .gradingform_rubric.editor .addcriterion input:hover,
+.certispl-green.ie9 button:hover,
+.certispl-green.ie9 input[type=button]:hover,
+.certispl-green.ie9 input[type=submit]:hover,
+.certispl-green.ie9.yui-skin-sam .yui-button.default.yui-button-hover button:hover,
+.certispl-green.ie9.yui-skin-sam .yui-button.yui-button-checked.yui-button-hover button:hover,
+.certispl-green.ie9 .gradingform_rubric.editor .addlevel input:hover,
+.certispl-green.ie9 .gradingform_rubric.editor .addcriterion input:hover {
+	background-color:#418000;
+}
+
+/* Boutons d'annulation */
+.certispl-green input.alternate[type=submit],
+.certispl-green input[type][value*=Annuler],
+.certispl-green input[type][value*=Cancel],
+.certispl-green button[class*=cancel],
+.certispl-green input[type=submit][name=cancel],
+.certispl-green input.cancel[type=button],
+.certispl-green.yui-skin-sam .yui-button button {
+	color:#418000;
+}
+
+/* État des boutons désactivés */
+.certispl-green button[disabled],
+.certispl-green input[type=button][disabled],
+.certispl-green input[type=submit][disabled], 
+.certispl-green.yui-skin-sam .yui-button.yui-button-disabled button,
+.certispl-green.yui-skin-sam .yui-button.yui-button-disabled.yui-button-checked button,
+.certispl-green.ie7 button[disabled],
+.certispl-green.ie7 input[type=button][disabled],
+.certispl-green.ie7 input[type=submit][disabled],
+.certispl-green.ie7.yui-skin-sam .yui-button.yui-button-disabled button,
+.certispl-green.ie7.yui-skin-sam .yui-button.yui-button-disabled.yui-button-checked button,
+.certispl-green.ie8 button[disabled],
+.certispl-green.ie8 input[type=button][disabled],
+.certispl-green.ie8 input[type=submit][disabled],
+.certispl-green.ie8.yui-skin-sam .yui-button.yui-button-disabled button,
+.certispl-green.ie7.yui-skin-sam .yui-button.yui-button-disabled.yui-button-checked button,
+.certispl-green.ie9 button[disabled],
+.certispl-green.ie9 input[type=button][disabled],
+.certispl-green.ie9 input[type=submit][disabled], 
+.certispl-green.ie9.yui-skin-sam .yui-button.yui-button-disabled button {
+	background:#E6E6E6;
+	color:#777;
+}
+
+.certispl-green #personsearch input[type=submit][disabled],
+.certispl-green .coursesearchbox input[type=submit][disabled],
+.certispl-green #tag-search-box button[disabled],
+.certispl-green .searchform button[disabled],
+.certispl-green .bibsearchform input[type=submit][disabled],
+.certispl-green .blogsearchform input[type=submit][disabled],
+.certispl-green .adminsearchform input[type=submit][disabled] {
+	background: #E6E6E6 url([[pix:theme|search]]) center center no-repeat;
+}
+
+/* Breadcrumb Navbar */
+.certispl-green .breadcrumb li a, .certispl-green .breadcrumb li span {background: #6dd600;	background: hsl(90, 100%, 8%);}
+.certispl-green .breadcrumb li a:after, .certispl-green .breadcrumb li span:after { 	border-left-color: hsl(90, 100%, 8%);}
+.certispl-green .breadcrumb li.color2 a, .certispl-green .breadcrumb li.color2 span       					{ background:        hsl(90, 100%, 12.57%);  }
+.certispl-green .breadcrumb li.color2 a:after, .certispl-green .breadcrumb li.color2 span:after		{ border-left-color: hsl(90, 100%, 12.57%);  }
+.certispl-green .breadcrumb li.color3 a, .certispl-green .breadcrumb li.color3 span 						{ background:        hsl(90, 100%, 17.14%);  }
+.certispl-green .breadcrumb li.color3 a:after, .certispl-green .breadcrumb li.color3 span:after		{ border-left-color: hsl(90, 100%, 17.14%);  }
+.certispl-green .breadcrumb li.color4 a, .certispl-green .breadcrumb li.color4 span						{ background:        hsl(90, 100%, 21.71%);  }
+.certispl-green .breadcrumb li.color4 a:after, .certispl-green .breadcrumb li.color4 span:after		{ border-left-color: hsl(90, 100%, 21.71%);  }
+.certispl-green .breadcrumb li.color5 a, .certispl-green .breadcrumb li.color5 span						{ background:        hsl(90, 100%, 26.29%);  }
+.certispl-green .breadcrumb li.color5 a:after, .certispl-green .breadcrumb li.color5 span:after		{ border-left-color: hsl(90, 100%, 26.29%);  }
+.certispl-green .breadcrumb li.color6 a, .certispl-green .breadcrumb li.color6 span						{ background:        hsl(90, 100%, 30.86%);  }
+.certispl-green .breadcrumb li.color6 a:after, .certispl-green .breadcrumb li.color6 span:after		{ border-left-color: hsl(90, 100%, 30.86%);  }
+.certispl-green .breadcrumb li.color7 a, .certispl-green .breadcrumb li.color7 span						{ background:        hsl(90, 100%, 35.43%);  }
+.certispl-green .breadcrumb li.color7 a:after, .certispl-green .breadcrumb li.color7 span:after		{ border-left-color: hsl(90, 100%, 35.43%);  }
+.certispl-green .breadcrumb li.color8 a, .certispl-green .breadcrumb li.color8 span						{ background:        hsl(90, 100%, 40%);  }
+.certispl-green .breadcrumb li.color8 a:after, .certispl-green .breadcrumb li.color8 span:after		{ border-left-color: hsl(90, 100%, 40%);  }
+.certispl-green .breadcrumb li a:hover { background:#418000; background: hsl(90, 100%, 2%);  }
+.certispl-green .breadcrumb li a:hover:after { border-left-color: hsl(90, 100%,2%) !important;  }
+/*Animation to put the emphasis on a button */
+@-webkit-keyframes btnemphasis-green {
+	from { -webkit-box-shadow: none; }
+	50% { -webkit-box-shadow: 0 0 14px #6DD600, inset 0 0 22px #a2ff3c; }
+	to { -webkit-box-shadow: none; }
+}
+@-moz-keyframes btnemphasis-green {
+	from { box-shadow: none; }
+	50% { box-shadow: 0 0 14px #6DD600, inset 0 0 22px #a2ff3c; }
+	to { box-shadow: none; }
+}
+@keyframes btnemphasis-green {
+	from { box-shadow: none; }
+	50% { box-shadow: 0 0 14px #6DD600, inset 0 0 22px #a2ff3c; }
+	to { box-shadow: none; }
+}
+.certispl-green #mainlogin {-webkit-animation-name: btnemphasis-green;-moz-animation-name: btnemphasis-green;animation-name: btnemphasis-green;}

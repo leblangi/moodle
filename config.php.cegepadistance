@@ -1,0 +1,39 @@
+<?php  // Moodle configuration file
+
+unset($CFG);
+global $CFG;
+$CFG = new stdClass();
+
+$CFG->dbtype    = 'mysqli';
+$CFG->dblibrary = 'native';
+$CFG->dbhost    = 'localhost';
+$CFG->dbname    = 'moodle2';
+$CFG->dbuser    = 'moodle2user';
+$CFG->dbpass    = 'da6@sWat';
+$CFG->prefix    = 'mdl_';
+$CFG->dboptions = array (
+  'dbpersist' => 0,
+  'dbsocket' => 0,
+);
+
+$CFG->wwwroot   = 'https://certitude.cegepadistance.ca';
+$CFG->proxyhost = '10.1.0.103';
+$CFG->proxyport = '8080';
+$CFG->dataroot  = '/app/data/moodledata';
+$CFG->admin     = 'admin';
+
+$CFG->directorypermissions = 0770;
+
+$CFG->passwordsaltmain = 'Qe>hNt2Dx1H:!ymQ}B/:g~@`BZ@,UnU';
+
+$CFG->mycoursesperpage = 500;
+
+$CFG->unittestprefix = 'tst';
+
+$CFG->defaultblocks_weeks = ':';
+$CFG->defaultblocks_topics = ':';
+
+require_once(dirname(__FILE__) . '/lib/setup.php');
+
+// There is no php closing tag in this file,
+// it is intentional because it prevents trailing whitespace problems!

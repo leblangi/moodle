@@ -234,7 +234,7 @@ function tag_print_search_box($return=false) {
     $output .= '<form action="'.$CFG->wwwroot.'/tag/search.php" style="display:inline">';
     $output .= '<div>';
     $output .= '<input id="searchform_search" name="query" type="text" size="40" />';
-    $output .= '<button id="searchform_button" type="submit">'. get_string('search', 'tag') .'</button><br />';
+    $output .= '<button id="searchform_button" type="submit" title="'.get_string('search', 'tag').'">'. get_string('search', 'tag') .'</button><br />';
     $output .= '</div>';
     $output .= '</form>';
     $output .= $OUTPUT->box_end();

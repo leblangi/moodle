@@ -1,0 +1,42 @@
+.que.manip .copytoallsection {display:none}
+.que.manip .copytoallsection.enabled {display:block}
+.que.manip .filemanager-container {clear:none} /* Disable the clear to avoid unwanted empty white spaces */
+.que.manip .filemanager.fm-manip-itemcopied {display:none}
+.que.manip .msg {
+    padding:5px;
+	font-size:0.8em;
+    font-weight:bold;
+	position: relative;
+	overflow:auto;
+    margin-bottom:10px;
+}
+.que.manip .manip-message {
+    font-weight:bold;
+    color:#557755;
+}
+.que.manip .msg a{
+    position:absolute;
+    top:0;
+    right: 0;
+    padding:2px;
+    color:#557755;
+    font-size:0.8em;
+}
+.que.manip .msg p{
+    margin-bottom:0;
+}
+.que.manip .error {
+    border:1px solid #775555;
+    background-color:#FFF0F0;
+    color:#775555;
+}
+.que.manip  .warning {
+    border:1px solid #777755;
+    background-color:#FFFFF0;
+    color:#777755;
+}
+.que.manip .success {
+    border:1px solid #557755;
+    background-color:#D0FFD0;
+    color:#557755;
+}

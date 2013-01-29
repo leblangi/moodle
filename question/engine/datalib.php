@@ -226,6 +226,7 @@ WHERE
             throw new coding_exception('Failed to load question_attempt_step ' . $stepid);
         }
 
+        // TODO: pass a question_type and a contextid to load_from_records to get response files
         $step = question_attempt_step::load_from_records($records, $stepid);
         $records->close();
 
@@ -1201,6 +1202,21 @@ class question_engine_unit_of_work implements question_usage_observer {
 
 
 /**
+ * The interface implemented by {@link question_file_saver} and {@link question_file_loader}.
+ *
+ * @copyright  2012 The Open University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+interface question_response_files {
+    /**
+     * Get the files that were submitted.
+     * @return array of stored_files objects.
+     */
+    public function get_files();
+}
+
+
+/**
  * This class represents the promise to save some files from a particular draft
  * file area into a particular file area. It is used beause the necessary
  * information about what to save is to hand in the
@@ -1211,7 +1227,7 @@ class question_engine_unit_of_work implements question_usage_observer {
  * @copyright  2011 The Open University
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class question_file_saver {
+class question_file_saver implements question_response_files {
     /** @var int the id of the draft file area to save files from. */
     protected $draftitemid;
     /** @var string the owning component name. */
@@ -1248,7 +1264,7 @@ class question_file_saver {
         global $USER;
 
         $fs = get_file_storage();
-        $usercontext = get_context_instance(CONTEXT_USER, $USER->id);
+        $usercontext = context_user::instance($USER->id);
 
         $files = $fs->get_area_files($usercontext->id, 'user', 'draft',
                 $draftitemid, 'sortorder, filepath, filename', false);
@@ -1290,6 +1306,73 @@ class question_file_saver {
     public function save_files($itemid, $context) {
         file_save_draft_area_files($this->draftitemid, $context->id,
                 $this->component, $this->filearea, $itemid);
+    }
+
+    /**
+     * Get the files that were submitted.
+     * @return array of stored_files objects.
+     */
+    public function get_files() {
+        global $USER;
+
+        $fs = get_file_storage();
+        $usercontext = context_user::instance($USER->id);
+
+        return $fs->get_area_files($usercontext->id, 'user', 'draft',
+                $this->draftitemid, 'sortorder, filepath, filename', false);
+    }
+}
+
+
+/**
+ * This class is the mirror image of {@link question_file_saver}. It allows
+ * files to be accessed again later (e.g. when re-grading) using that same
+ * API as when doing the original grading.
+ *
+ * @copyright  2012 The Open University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class question_file_loader implements question_response_files {
+    /** @var question_attempt_step the step that these files belong to. */
+    protected $step;
+
+    /** @var string the field name for these files - which is used to construct the file area name. */
+    protected $name;
+
+    /**
+    * @var string the value to stored in the question_attempt_step_data to
+     * represent these files.
+    */
+    protected $value;
+
+    /** @var int the context id that the files belong to. */
+    protected $contextid;
+
+    /**
+     * Constuctor.
+     * @param question_attempt_step $step the step that these files belong to.
+     * @param string $name string the field name for these files - which is used to construct the file area name.
+     * @param string $value the value to stored in the question_attempt_step_data to
+     *      represent these files.
+     * @param int $contextid the context id that the files belong to.
+     */
+    public function __construct(question_attempt_step $step, $name, $value, $contextid) {
+        $this->step = $step;
+        $this->name = $name;
+        $this->value = $value;
+        $this->contextid = $contextid;
+    }
+
+    public function __toString() {
+        return $this->value;
+    }
+
+    /**
+     * Get the files that were submitted.
+     * @return array of stored_files objects.
+     */
+    public function get_files() {
+        return $this->step->get_qt_files($this->name, $this->contextid);
     }
 }
 

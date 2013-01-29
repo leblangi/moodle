@@ -1,0 +1,380 @@
+/********************************************************
+**
+** Theme name: Splash Certitude v.3
+** Creation Date: 16/03/11
+** Author: Gilles-Philippe Leblanc - University of Montreal
+** Author URI: http://www.umontreal.ca
+**
+*********************************************************/
+
+/* Custom Menu
+-----------------------*/
+.certispl-orange #logobox #site_fullname {color: #904903}
+
+.certispl-orange #dropdownmenu {background-position:0 -237px}
+
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul {
+	border-bottom:1px solid #dbcfc0;
+}
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul > li {
+	border-right: 1px solid #dbcfc0;
+}
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul > li:last-child,
+.certispl-orange #custom_menu_1 > .custom_menu_submenu > ul > li {
+	border:none;
+}
+.certispl-orange #custommenu .javascript-disabled .custom_menu_submenu .yui3-menu-content,
+.certispl-orange #custommenu .custom_menu_submenu .yui3-menu-content,
+.certispl-orange .tableau2 th {
+	background: url([[pix:theme|sprite_v]]) repeat-x scroll 0 -387px #F29700;
+	background: -moz-linear-gradient(top, #F29700 0%, #7b5100 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F29700), color-stop(100%,#7b5100));
+	background: -webkit-linear-gradient(top, #F29700 0%,#7b5100 100%);
+	background: -o-linear-gradient(top, #F29700 0%,#7b5100 100%);
+	background: linear-gradient(top, #F29700 0%,#7b5100 100%);
+	border-color:#5f564c;
+	border-top-color:#F29700;
+}
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label,
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menuitem-content{
+	color:#904903;
+}
+
+.certispl-orange #custom_menu_1.javascript-disabled > .yui3-menu-content > ul > .yui3-menuitem-current.yui3-menuitem-active > .yui3-menuitem-content,
+.certispl-orange #custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content .yui3-menuitem-active .yui3-menuitem-content,
+.certispl-orange #custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content a.yui3-menuitem-content:hover,
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current.yui3-menuitem-active > .yui3-menuitem-content,
+.certispl-orange #custommenu .yui3-menu-content .yui3-menuitem-active .yui3-menuitem-content {
+	color:#FFF;
+	background:#F29700;
+}
+
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label-active,
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label-menuvisible,
+.certispl-orange #custommenu .yui3-menu-content .yui3-menu-label-active,
+.certispl-orange #custommenu .yui3-menu-horizontal.javascript-disabled li:hover a.yui3-menu-label,
+.certispl-orange #custommenu .yui3-menu-content .yui3-menu-label-menuvisible {
+	color:#FFF;
+	background-color:#F29700;
+	border:1px solid #F29700;
+}
+.certispl-orange #custommenu .yui3-menu-horizontal.javascript-disabled li:hover a.yui3-menu-label,
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label-active,
+.certispl-orange #custom_menu_1 > .yui3-menu-content > ul > .yui3-menuitem-current > .yui3-menu-label-menuvisible {
+	border-top-color:#1c4c59;
+	border-left-color:#1c4c59;
+	border-right-color:#1c4c59;
+}
+.certispl-orange #custommenu .yui3-menu-content .yui3-menu-label-menuvisible {
+	border-color:#5f564c;
+}
+.certispl-orange #custommenu .custom_menu_submenu .yui3-menu-label {
+	border:1px;
+}
+.certispl-orange #custommenu .custom_menu_submenu .yui3-menu-label-active,
+.certispl-orange #custommenu .custom_menu_submenu .yui3-menu-label-menuvisible {
+	background-color:#605f5f;
+}
+.certispl-orange #custommenu .custom_menu_submenu .yui3-menu-label-menuvisible {
+	border-color:#5f564c;
+}
+.certispl-orange #custommenu .yui3-menu-horizontal.javascript-disabled li:hover .custom_menu_submenu li:hover .yui3-menuitem-content,
+.certispl-orange #custommenu .custom_menu_submenu .yui3-menuitem-active .yui3-menuitem-content {
+	background:#fff;
+	text-shadow:none;
+	color:#904903;
+}
+
+.certispl-orange #usercontrols .separator {
+	background-color:#dbcfc0;
+}
+
+/* Content
+-----------------------*/
+
+.certispl-orange .coursebox{
+	padding-left:5px;
+	border-bottom: 1px dashed #f0e7de;
+}
+
+/* Sideblocks
+-----------------------*/
+
+.certispl-orange #report-region-pre .block .header, /*-- report left block header --*/
+.certispl-orange #region-pre .block .header, /*-- left block header --*/
+.certispl-orange #region-post .block .header { /*-- right block header --*/
+	background-color: #F17B05;
+	height: auto;
+	color: #fff;
+	padding: 12px 0 0;
+}
+
+/* Session and dialog box
+------------------------*/
+.certispl-orange #qtypechoicecontainer.yui-panel .hd,
+.certispl-orange #filesskin .yui3-widget-hd,
+.certispl-orange .moodle-dialogue-base .moodle-dialogue-hd,
+.certispl-orange #region-main-wrap .block.block_course_session .header {background-position:0 -360px !important;}
+
+/* Mini Calendar
+------------------------*/
+.certispl-orange .block .minicalendar td.weekend {	/* setting weekend date colour */
+	color:#904903;
+}
+
+.certispl-orange .block .minicalendar th {	/* setting days of weekdays name date colour */ 
+	border-top-color:#F17B05;
+	border-bottom:1px solid #904903;
+	background-position:0 -360px;
+	color:#FFF;
+}
+
+/* Forum
+------------------------*/
+
+.certispl-orange .forumpost .topic .subject,
+.certispl-orange .path-blog.certispl-orange .forumpost .subject a,
+.certispl-orange .path-blog.certispl-orange .forumpost .subject a:link,
+.certispl-orange .path-blog.certispl-orange .forumpost .subject a:visited {	/* forum subject section inside topic header */
+	font-weight: bold;
+	font-size: 1.1em;
+	padding-left: 5px;
+	background: #f17b05;
+	color: #fff;
+}
+
+/* Blog
+------------------------*/
+
+.certispl-orange .blog_entry .subject a:link,
+.certispl-orange .blog_entry .subject a:visited,
+.certispl-orange .blog_entry .subject a:hover,
+.certispl-orange .blog_entry .subject a:active {
+	color: #000;
+}
+
+/* dock left
+---------------------------*/
+
+.certispl-orange #dock.dock.dock_left_vertical { /* background style for dockpanel */
+	background-color: #904903;
+	background-image: -khtml-gradient(linear, right top, left top, from(#F17B05), to(#904903));
+	background-image: -moz-linear-gradient(right, #F17B05, #904903);
+	background-image: -webkit-gradient(linear, right top, left top, color-stop(0%, #F17B05), color-stop(100%, #904903));
+	background-image: -webkit-linear-gradient(right, #F17B05, #904903);
+	background-image: -o-linear-gradient(right, #F17B05, #904903);
+	background-image: -ms-linear-gradient(right, #F17B05, #904903);
+	background-image: linear-gradient(to left, #F17B05, #904903);
+}
+
+#page-mod-quiz-edit.certispl-orange  .questionbankwindow div.header,
+.certispl-orange #dockeditempanel .dockeditempanel_hd {
+	background-color: #904903;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#F17B05), to(#904903));
+	background-image: -moz-linear-gradient(top, #F17B05, #904903);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F17B05), color-stop(100%, #904903));
+	background-image: -webkit-linear-gradient(top, #F17B05, #904903);
+	background-image: -o-linear-gradient(top, #F17B05, #904903);
+	background-image: -ms-linear-gradient(top, #F17B05, #904903);
+	background-image: linear-gradient(top, #F17B05, #904903);
+}
+
+/*	CSS personnalisé de la page d'accueil */
+
+.certispl-orange .studium_accueil .conteneur ul li:before,
+.certispl-orange .studium_nouveaute ul li:before {
+	background-position:-27px -87px;
+}
+
+/* Ajout de styles de tableaux personnalisés */
+.certispl-orange .tableau2 th {border-color:#7b5100}
+
+/********************* Styles des boutons *******************************/
+
+.certispl-orange.yui-skin-sam .yui-button.default button,
+.certispl-orange.yui-skin-sam .yui-button.yui-button-checked button,
+.certispl-orange button,
+.certispl-orange input[type=button],
+.certispl-orange input[type=submit],
+.certispl-orange .gradingform_rubric.editor .addlevel input,
+.certispl-orange .gradingform_rubric.editor .addcriterion input {
+	background-color: #904903;
+	color:#FFF;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#F17B05), to(#904903));
+	background-image: -moz-linear-gradient(top, #F17B05, #904903);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F17B05), color-stop(100%, #904903));
+	background-image: -webkit-linear-gradient(top, #F17B05, #904903);
+	background-image: -o-linear-gradient(top, #F17B05, #904903);
+	background-image: -ms-linear-gradient(top, #F17B05, #904903);
+	background-image: linear-gradient(top, #F17B05, #904903);
+	border-color: #904903;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.certispl-orange #personsearch input[type=submit],
+.certispl-orange .coursesearchbox input[type=submit],
+.certispl-orange #tag-search-box button,
+.certispl-orange .searchform button,
+.certispl-orange .bibsearchform input[type=submit],
+.certispl-orange .blogsearchform input[type=submit],
+.certispl-orange .adminsearchform input[type=submit] {
+	background-image: url([[pix:theme|search]]);
+	background-color:#F17B05;
+}
+
+.certispl-orange #personsearch input[type=submit],
+.certispl-orange #tag-search-box button,
+.certispl-orange .coursesearchbox input[type=submit] {
+	background-image: url([[pix:theme|search_revert]]);
+}
+
+.certispl-orange.ie7 button,
+.certispl-orange.ie7 input[type=button],
+.certispl-orange.ie7 input[type=submit],
+.certispl-orange.ie7.yui-skin-sam .yui-button.default button,
+.certispl-orange.ie7.yui-skin-sam .yui-button.default.yui-button-focus button,
+.certispl-orange.ie7.yui-skin-sam .yui-button.default.yui-button-active button,
+.certispl-orange.ie7.yui-skin-sam .yui-button.yui-button-checked button,
+.certispl-orange.ie7.yui-skin-sam .yui-button.yui-button-checked.yui-button-focus button,
+.certispl-orange.ie7.yui-skin-sam .yui-button.yui-button-checked.yui-button-active button,
+.certispl-orange.ie7 .gradingform_rubric.editor .addlevel input,
+.certispl-orange.ie7 .gradingform_rubric.editor .addcriterion input,
+.certispl-orange.ie8 button,
+.certispl-orange.ie8 input[type=button],
+.certispl-orange.ie8 input[type=submit],
+.certispl-orange.ie8.yui-skin-sam .yui-button.default button,
+.certispl-orange.ie8.yui-skin-sam .yui-button.default.yui-button-focus button,
+.certispl-orange.ie8.yui-skin-sam .yui-button.default.yui-button-active button,
+.certispl-orange.ie8.yui-skin-sam .yui-button.yui-button-checked button,
+.certispl-orange.ie8.yui-skin-sam .yui-button.yui-button-checked.yui-button-focus button,
+.certispl-orange.ie8.yui-skin-sam .yui-button.yui-button-checked.yui-button-active button,
+.certispl-orange.ie8 .gradingform_rubric.editor .addlevel input,
+.certispl-orange.ie8 .gradingform_rubric.editor .addcriterion input,
+.certispl-orange.ie9 button,
+.certispl-orange.ie9 input[type=button],
+.certispl-orange.ie9 input[type=submit],
+.certispl-orange.ie9.yui-skin-sam .yui-button.default button,
+.certispl-orange.ie9.yui-skin-sam .yui-button.default.yui-button-focus button,
+.certispl-orange.ie9.yui-skin-sam .yui-button.default.yui-button-active button,
+.certispl-orange.ie9.yui-skin-sam .yui-button.yui-button-checked button,
+.certispl-orange.ie9.yui-skin-sam .yui-button.yui-button-checked.yui-button-focus button,
+.certispl-orange.ie9.yui-skin-sam .yui-button.yui-button-checked.yui-button-active button,
+.certispl-orange.ie9 .gradingform_rubric.editor .addlevel input,
+.certispl-orange.ie9 .gradingform_rubric.editor .addcriterion input {
+	background-color:#F17B05;
+}
+
+.certispl-orange #personsearch input[type=submit]:hover,
+.certispl-orange .coursesearchbox input[type=submit]:hover,
+.certispl-orange #tag-search-box button:hover,
+.certispl-orange .searchform button:hover,
+.certispl-orange .bibsearchform input[type=submit]:hover,
+.certispl-orange .blogsearchform input[type=submit]:hover,
+.certispl-orange .adminsearchform input[type=submit]:hover,
+.certispl-orange.ie7 button:hover,
+.certispl-orange.ie7 input[type=button]:hover,
+.certispl-orange.ie7 input[type=submit]:hover, 
+.certispl-orange.ie7.yui-skin-sam .yui-button.default.yui-button-hover button:hover,
+.certispl-orange.ie7.yui-skin-sam .yui-button.yui-button-checked.yui-button-hover button:hover,
+.certispl-orange.ie7 .gradingform_rubric.editor .addlevel input:hover,
+.certispl-orange.ie7 .gradingform_rubric.editor .addcriterion input:hover,
+.certispl-orange.ie8 button:hover,
+.certispl-orange.ie8 input[type=button]:hover,
+.certispl-orange.ie8 input[type=submit]:hover,
+.certispl-orange.ie8.yui-skin-sam .yui-button.default.yui-button-hover button:hover,
+.certispl-orange.ie8.yui-skin-sam .yui-button.yui-button-checked.yui-button-hover button:hover,
+.certispl-orange.ie8 .gradingform_rubric.editor .addlevel input:hover,
+.certispl-orange.ie8 .gradingform_rubric.editor .addcriterion input:hover,
+.certispl-orange.ie9 button:hover,
+.certispl-orange.ie9 input[type=button]:hover,
+.certispl-orange.ie9 input[type=submit]:hover,
+.certispl-orange.ie9.yui-skin-sam .yui-button.default.yui-button-hover button:hover,
+.certispl-orange.ie9.yui-skin-sam .yui-button.yui-button-checked.yui-button-hover button:hover,
+.certispl-orange.ie9 .gradingform_rubric.editor .addlevel input:hover,
+.certispl-orange.ie9 .gradingform_rubric.editor .addcriterion input:hover {
+	background-color:#904903;
+}
+
+/* Boutons d'annulation */
+.certispl-orange input.alternate[type=submit],
+.certispl-orange input[type][value*=Annuler],
+.certispl-orange input[type][value*=Cancel],
+.certispl-orange button[class*=cancel],
+.certispl-orange input[type=submit][name=cancel],
+.certispl-orange input.cancel[type=button],
+.certispl-orange.yui-skin-sam .yui-button button {
+	color:#904903;
+}
+
+/* État des boutons désactivés */
+.certispl-orange button[disabled],
+.certispl-orange input[type=button][disabled],
+.certispl-orange input[type=submit][disabled], 
+.certispl-orange.yui-skin-sam .yui-button.yui-button-disabled button,
+.certispl-orange.yui-skin-sam .yui-button.yui-button-disabled.yui-button-checked button,
+.certispl-orange.ie7 button[disabled],
+.certispl-orange.ie7 input[type=button][disabled],
+.certispl-orange.ie7 input[type=submit][disabled],
+.certispl-orange.ie7.yui-skin-sam .yui-button.yui-button-disabled button,
+.certispl-orange.ie7.yui-skin-sam .yui-button.yui-button-disabled.yui-button-checked button,
+.certispl-orange.ie8 button[disabled],
+.certispl-orange.ie8 input[type=button][disabled],
+.certispl-orange.ie8 input[type=submit][disabled],
+.certispl-orange.ie8.yui-skin-sam .yui-button.yui-button-disabled button,
+.certispl-orange.ie7.yui-skin-sam .yui-button.yui-button-disabled.yui-button-checked button,
+.certispl-orange.ie9 button[disabled],
+.certispl-orange.ie9 input[type=button][disabled],
+.certispl-orange.ie9 input[type=submit][disabled], 
+.certispl-orange.ie9.yui-skin-sam .yui-button.yui-button-disabled button {
+	background:#E6E6E6;
+	color:#777;
+}
+
+.certispl-orange #personsearch input[type=submit][disabled],
+.certispl-orange .coursesearchbox input[type=submit][disabled],
+.certispl-orange #tag-search-box button[disabled],
+.certispl-orange .searchform button[disabled],
+.certispl-orange .bibsearchform input[type=submit][disabled],
+.certispl-orange .blogsearchform input[type=submit][disabled],
+.certispl-orange .adminsearchform input[type=submit][disabled] {
+	background: #E6E6E6 url([[pix:theme|search]]) center center no-repeat;
+}
+
+/* Breadcrumb Navbar */
+.certispl-orange .breadcrumb li a, .certispl-orange .breadcrumb li span {background: #F17B05;	background: hsl(30, 96%, 12%);}
+.certispl-orange .breadcrumb li a:after, .certispl-orange .breadcrumb li span:after { 	border-left-color: hsl(30, 96%, 12%);}
+.certispl-orange .breadcrumb li.color2 a, .certispl-orange .breadcrumb li.color2 span       					{ background:        hsl(30, 96%, 18.86%);  }
+.certispl-orange .breadcrumb li.color2 a:after, .certispl-orange .breadcrumb li.color2 span:after		{ border-left-color: hsl(30, 96%, 18.86%);  }
+.certispl-orange .breadcrumb li.color3 a, .certispl-orange .breadcrumb li.color3 span 						{ background:        hsl(30, 96%, 25.71%);  }
+.certispl-orange .breadcrumb li.color3 a:after, .certispl-orange .breadcrumb li.color3 span:after		{ border-left-color: hsl(30, 96%, 25.71%);  }
+.certispl-orange .breadcrumb li.color4 a, .certispl-orange .breadcrumb li.color4 span						{ background:        hsl(30, 96%, 32.57%);  }
+.certispl-orange .breadcrumb li.color4 a:after, .certispl-orange .breadcrumb li.color4 span:after		{ border-left-color: hsl(30, 96%, 32.57%);  }
+.certispl-orange .breadcrumb li.color5 a, .certispl-orange .breadcrumb li.color5 span						{ background:        hsl(30, 96%, 39.43%);  }
+.certispl-orange .breadcrumb li.color5 a:after, .certispl-orange .breadcrumb li.color5 span:after		{ border-left-color: hsl(30, 96%, 39.43%);  }
+.certispl-orange .breadcrumb li.color6 a, .certispl-orange .breadcrumb li.color6 span						{ background:        hsl(30, 96%, 46.29%);  }
+.certispl-orange .breadcrumb li.color6 a:after, .certispl-orange .breadcrumb li.color6 span:after		{ border-left-color: hsl(30, 96%, 46.29%);  }
+.certispl-orange .breadcrumb li.color7 a, .certispl-orange .breadcrumb li.color7 span						{ background:        hsl(30, 96%, 53.14%);  }
+.certispl-orange .breadcrumb li.color7 a:after, .certispl-orange .breadcrumb li.color7 span:after		{ border-left-color: hsl(30, 96%, 53.14%);  }
+.certispl-orange .breadcrumb li.color8 a, .certispl-orange .breadcrumb li.color8 span						{ background:        hsl(30, 96%, 60%);  }
+.certispl-orange .breadcrumb li.color8 a:after, .certispl-orange .breadcrumb li.color8 span:after		{ border-left-color: hsl(30, 96%, 60%);  }
+.certispl-orange .breadcrumb li a:hover { background:#904903; background: hsl(30, 96%, 6%);  }
+.certispl-orange .breadcrumb li a:hover:after { border-left-color: hsl(30, 96%,6%) !important;  }
+
+/*Animation to put the emphasis on a button */
+@-webkit-keyframes btnemphasis-orange {
+	from { -webkit-box-shadow: none; }
+	50% { -webkit-box-shadow: 0 0 14px #F17B05, inset 0 0 22px #ffb743; }
+	to { -webkit-box-shadow: none; }
+}
+@-moz-keyframes btnemphasis-orange {
+	from { box-shadow: none; }
+	50% { box-shadow: 0 0 14px #F17B05, inset 0 0 22px #ffb743; }
+	to { box-shadow: none; }
+}
+@keyframes btnemphasis-orange {
+	from { box-shadow: none; }
+	50% { box-shadow: 0 0 14px #F17B05, inset 0 0 22px #ffb743; }
+	to { box-shadow: none; }
+}
+
+.certispl-orange #mainlogin {-webkit-animation-name: btnemphasis-orange;-moz-animation-name: btnemphasis-orange;animation-name: btnemphasis-orange;}

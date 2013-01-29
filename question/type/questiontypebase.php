@@ -783,6 +783,9 @@ class question_type {
         $extraquestionfields = $this->extra_question_fields();
         if (is_array($extraquestionfields)) {
             $question_extension_table = array_shift($extraquestionfields);
+            echo $question_extension_table . "<br/>";
+            echo $this->questionid_column_name() . "<br/>";
+            echo$questionid . "<br/>";
             $DB->delete_records($question_extension_table,
                     array($this->questionid_column_name() => $questionid));
         }

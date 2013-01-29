@@ -504,11 +504,11 @@ M.core_dock.fixTitleOrientation = function(item, title, text) {
             clockwise = false;
             break;
     }
-
-    if (Y.UA.ie > 7) {
-        // IE8 can flip the text via CSS but not handle SVG
+	// [MDLUM-1992] - Appliquer les modifications proposées pour le thème StudiUM
+    if (Y.UA.ie == 8 || Y.UA.ie == 9) {
+        // IE8 and IE9 can flip the text via CSS but not handle SVG or not correctly
         title.setContent(text);
-        title.setAttribute('style', 'writing-mode: tb-rl; filter: flipV flipH;display:inline;');
+        title.setAttribute('style', 'writing-mode: tb-rl; filter: flipV flipH;display:inline');
         title.addClass('filterrotate');
         return title;
     }
@@ -524,6 +524,7 @@ M.core_dock.fixTitleOrientation = function(item, title, text) {
     // Create the text for the SVG
     var txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     txt.setAttribute('font-size','10px');
+	txt.setAttribute('text-rendering','geometricPrecision');
     if (clockwise) {
         txt.setAttribute('transform','rotate(90 '+(qwidth/2)+' '+qwidth+')');
     } else {

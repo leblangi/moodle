@@ -1,0 +1,392 @@
+.loginbox .loginform .form-input input {
+	width: auto;
+}
+
+/********************* Styles des boutons *******************************/
+
+input.cancel[type=button] {margin-left:1em}
+
+.yui-skin-sam .yui-button .first-child {
+	margin:0;
+	border:none;
+}
+
+.yui-skin-sam .yui-button {
+	background: transparent;
+	border:none;
+}
+button,
+input[type=button],
+input[type=submit],
+.yui-skin-sam .yui-button button,
+.yui-skin-sam .yui-button.default button,
+.yui-skin-sam .yui-button.yui-button-checked button,
+.gradingform_rubric.editor .addlevel input,
+.gradingform_rubric.editor .addcriterion input {
+	border-width:1px;
+	font: bold 10px/14px "Helvetica Neue",Helvetica, Arial, sans-serif;
+	padding: 5px 8px;
+	border: 1px solid #CCC;
+	border-color: #094D88;
+	border-color: rgba(0, 0, 0, 0.05) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+/*Par défaut*/
+.yui-skin-sam .yui-button.default button,
+.yui-skin-sam .yui-button.yui-button-checked button,
+button,
+input[type=button],
+input[type=submit],
+.certispl-blue .yui-skin-sam .yui-button.default button,
+.certispl-blue .yui-skin-sam .yui-button.yui-button-checked button,
+.certispl-blue button,
+.certispl-blue input[type=button],
+.certispl-blue input[type=submit],
+.gradingform_rubric.editor .addlevel input,
+.gradingform_rubric.editor .addcriterion input {
+	text-transform: uppercase;
+	cursor: pointer;
+	background-color: #094D88;
+	background-repeat: repeat-x;
+	background-image: url([[pix:theme|sprite_v]]);
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#0D70C4), to(#094D88));
+	background-image: -moz-linear-gradient(top, #0D70C4, #094D88);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0D70C4), color-stop(100%, #094D88));
+	background-image: -webkit-linear-gradient(top, #0D70C4, #094D88);
+	background-image: -o-linear-gradient(top, #0D70C4, #094D88);
+	background-image: -ms-linear-gradient(top, #0D70C4, #094D88);
+	background-image: linear-gradient(top, #0D70C4, #094D88);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-webkit-transition: 0.1s linear all;
+	-moz-transition: 0.1s linear all;
+	-ms-transition: 0.1s linear all;
+	-o-transition: 0.1s linear all;
+	transition: 0.1s linear all;
+	max-width:100%;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	overflow:hidden;
+	margin-left:4px;
+	background-position:0 0;
+	height:auto;
+}
+
+button:first-child,
+input[type=button]:first-child,
+input[type=submit]:first-child,
+.yui-skin-sam .yui-button.default button:first-child,
+.yui-skin-sam .yui-button.yui-button-checked button:first-child {
+	margin-left:0;
+}
+
+button:hover,
+input[type=button]:hover,
+input[type=submit]:hover,
+.yui-skin-sam .yui-button.default.yui-button-hover button:hover,
+.yui-skin-sam .yui-button.yui-button-hover.yui-button-checked button:hover,
+.gradingform_rubric.editor .addlevel input:hover,
+.gradingform_rubric.editor .addcriterion input:hover {
+	text-decoration: none;
+	background-position: 0 -15px;
+}
+
+button:focus,
+input[type=button]:focus,
+input[type=submit]:focus,
+.yui-skin-sam .yui-button.default.yui-button-focus button:focus,
+.yui-skin-sam .yui-button.yui-button-focus.yui-button-checked button:focus,
+.gradingform_rubric.editor .addlevel input:focus,
+.gradingform_rubric.editor .addcriterion input:focus {
+	outline: none;
+	-webkit-box-shadow: inset 0 0 2px rgba(1, 255, 255, 1), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 0 2px rgba(255, 255, 255, 1), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 0 2px rgba(255, 255, 255, 1), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button:active,
+input[type=button]:active,
+input[type=submit]:active,
+.yui-skin-sam .yui-button.default.yui-button-active button:active,
+.yui-skin-sam .yui-button.yui-button-checked.yui-button-active button:active,
+.gradingform_rubric.editor .addlevel input:active,
+.gradingform_rubric.editor .addcriterion input:active {
+	background-color: #094D88;
+	background-image: none;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Boutons d'annulation ou alternatif */
+input.alternate[type=submit],
+input[type][value*=Annuler],
+input[type][value*=Cancel],
+button[class*=cancel],
+.yui-skin-sam .yui-button button,
+input.cancel[type=button],
+input[type=submit][name=cancel],
+input.alternate[type=submit],
+.certispl-green input.alternate[type=submit],
+.certispl-green input[type][value*=Annuler],
+.certispl-green input[type][value*=Cancel],
+.certispl-green button[class*=cancel],
+.certispl-green input.cancel[type=button],
+.certispl-green input[type=submit][name=cancel],
+.certispl-red input.alternate[type=submit],
+.certispl-red input[type][value*=Annuler],
+.certispl-red input[type][value*=Cancel],
+.certispl-red button[class*=cancel],
+.certispl-red input.cancel[type=button],
+.certispl-red input[type=submit][name=cancel],
+.certispl-orange input.alternate[type=submit],
+.certispl-orange input[type][value*=Annuler],
+.certispl-orange input[type][value*=Cancel],
+.certispl-orange button[class*=cancel],
+.certispl-orange input.cancel[type=button],
+.certispl-orange input[type=submit][name=cancel] {
+	color:#094D88;
+	background-color: #dfe2e5;
+	background-repeat: repeat-x;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#FFF), to(#dfe2e5));
+	background-image: -moz-linear-gradient(top, #FFF, #dfe2e5);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFF), color-stop(100%, #dfe2e5));
+	background-image: -webkit-linear-gradient(top, #FFF, #dfe2e5);
+	background-image: -o-linear-gradient(top, #FFF, #dfe2e5);
+	background-image: -ms-linear-gradient(top, #FFF, #dfe2e5);
+	background-image: linear-gradient(top, #FFF, #dfe2e5);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+input.alternate[type=submit]:active,
+input[value*=Annuler]:active,
+input[value*=Cancel]:active,
+button[class*=cancel]:active,
+input[type=submit][name=cancel]:active,
+.yui-skin-sam .yui-button.yui-button-active button {
+	background-color: #dfe2e5
+}
+
+/*************** Champs de saisies, menus déroulants boutons radios et case a cocher **************************/
+
+.loginbox .loginform .form-input #username,
+.loginbox .loginform .form-input #password,
+form input[type=text],
+form input[type="password"],
+form input[type="checkbox"],
+form input[type="radio"],
+form textarea,
+select {
+	border: 1px solid #CCC;
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 015);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	padding:1px;
+
+}
+
+.loginbox .loginform .form-input #username:hover,
+.loginbox .loginform .form-input #password:hover,
+form input[type=text]:hover,
+form input[type="password"]:hover,
+form input[type="checkbox"]:hover,
+form input[type="radio"]:hover
+form textarea:hover,
+select:hover {
+	outline: 0;
+	border: 1px solid #BBB;
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+form input[type="checkbox"],
+form input[type="checkbox"]:hover,
+form input[type="radio"],
+form input[type="radio"]:hover {border:none}
+
+.loginbox .loginform .form-input #username:focus,
+.loginbox .loginform .form-input #password:focus,
+form input[type=text]:focus,
+form input[type="password"]:focus,
+form input[type="checkbox"]:focus,
+form input[type="radio"]:focus
+form textarea:focus,
+select:focus {
+	outline: 0;
+	border-color: rgba(14, 121, 212, 0.8);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 7px rgba(14, 121, 212, 0.6);
+	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 7px rgba(14, 121, 212, 0.6);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 7px rgba(14, 121, 212, 0.6);
+}
+
+
+/*************** Champs et boutons de recherche **************************/
+
+.blogsearchform,
+.searchform,
+.adminsearchform {
+	padding: 10px 0;
+}
+
+/* Champs de recherche */
+#personsearch input[type=text],
+.coursesearchbox input[type=text],
+#tag-search-box input[type=text],
+.searchform input[type=text],
+.bibsearchform input[type=text],
+.blogsearchform input[type=text],
+.adminsearchform input[type=text] {
+	-webkit-border-radius: 4px 0 0 4px;
+	-moz-border-radius: 4px 0 0 4px;
+	-ms-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
+	height:18px;
+	padding-left:2px;
+}
+
+/* Champs de recherche dockés*/
+#dockeditempanel #personsearch input[type=text],
+#dockeditempanel .coursesearchbox input[type=text],
+#dockeditempanel #tag-search-box input[type=text],
+#dockeditempanel .searchform input[type=text],
+#dockeditempanel .bibsearchform input[type=text],
+#dockeditempanel .blogsearchform input[type=text],
+#dockeditempanel .adminsearchform input[type=text] {
+	width:156px;
+}
+/* Champs de recherche dockés*/
+#dockeditempanel.oversized_content #personsearch input[type=text],
+#dockeditempanel.oversized_content .coursesearchbox input[type=text],
+#dockeditempanel.oversized_content #tag-search-box input[type=text],
+#dockeditempanel.oversized_content .searchform input[type=text],
+#dockeditempanel.oversized_content .bibsearchform input[type=text],
+#dockeditempanel.oversized_content .blogsearchform input[type=text],
+#dockeditempanel.oversized_content .adminsearchform input[type=text] {
+	width:140px;
+}
+
+
+#personsearch input[type=submit],
+.coursesearchbox input[type=submit],
+#tag-search-box button,
+.searchform button,
+.bibsearchform input[type=submit],
+.blogsearchform input[type=submit],
+.adminsearchform input[type=submit] {
+	padding: 1px;
+	height:22px;
+	display:inline-block;
+	vertical-align:top;
+	text-indent:-9999px;
+	width:30px;
+	background: #0D70C4 url([[pix:theme|search]]) center center no-repeat;
+	-webkit-border-radius: 0 4px 4px 0;
+	-moz-border-radius: 0 4px 4px 0;
+	-ms-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+	margin-left:0;
+}
+
+#personsearch input[type=submit]:hover,
+.coursesearchbox input[type=submit]:hover,
+#tag-search-box button:hover,
+.searchform button:hover,
+.bibsearchform input[type=submit]:hover,
+.blogsearchform input[type=submit]:hover,
+.adminsearchform input[type=submit]:hover {
+	background-color: #094D88;
+}
+
+/* Gros champs de recherche */
+#personsearch input[type=text],
+#tag-search-box input[type=text],
+.coursesearchbox input[type=text] {
+	padding:4px 1px;
+}
+
+#personsearch input[type=submit],
+#tag-search-box button,
+.coursesearchbox input[type=submit] {
+	background-position: 6px center;
+	background-image: url([[pix:theme|search_revert]]);
+	height: 28px;
+	padding: 0 4px 2px 22px;
+	text-indent: 0;
+	width: auto;
+}
+
+/* État des boutons désactivés */
+.yui-skin-sam .yui-button.yui-button-disabled button,
+.yui-skin-sam .yui-button.yui-button-disabled.yui-button-focus button,
+.yui-skin-sam .yui-button.yui-button-disabled.yui-button-active button,
+.yui-skin-sam .yui-button.yui-button-disabled.yui-button-checked button,
+.yui-skin-sam .yui-button.yui-button-disabled.yui-button-checked.yui-button-focus button,
+.yui-skin-sam .yui-button.yui-button-disabled.yui-button-checked.yui-button-active button,
+.loginbox .loginform .form-input #username[disabled],
+.loginbox .loginform .form-input #password[disabled],
+input#id_cancel[disabled],
+form input[type=text][disabled],
+form input[type="password"][disabled],
+form input[type="checkbox"][disabled],
+form textarea[disabled],
+select[disabled],
+button[disabled], input[type=button][disabled], input[type=submit][disabled] {
+	cursor: default;
+	background: #E6E6E6;
+	text-shadow: none;
+	color: #777;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	box-shadow: none;
+}
+
+.certispl-blue #personsearch input[type=submit][disabled],
+.certispl-blue .coursesearchbox input[type=submit][disabled],
+.certispl-blue #tag-search-box button[disabled],
+.certispl-blue .searchform button[disabled],
+.certispl-blue .bibsearchform input[type=submit][disabled],
+.certispl-blue .blogsearchform input[type=submit][disabled],
+.certispl-blue .adminsearchform input[type=submit][disabled] {
+	background: #E6E6E6 url([[pix:theme|search]]) center center no-repeat;
+}
+
+/* Bouton de la grille d'évaluation */
+
+.gradingform_rubric.editor .criterion .controls .delete input,
+.gradingform_rubric.editor .levels .level .delete input {
+	background-image: url([[pix:t/delete]]);
+}
+.gradingform_rubric.editor .levels .level .delete input {vertical-align: bottom;}
+
+.gradingform_rubric.editor .delete input,
+.gradingform_rubric.editor .moveup input,
+.gradingform_rubric.editor .movedown input {
+	text-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+}

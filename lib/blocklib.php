@@ -315,6 +315,27 @@ class block_manager {
         return $this->visibleblockcontent[$region];
     }
 
+	 /**
+     * Returns if fakeblock exists in a region
+     *
+     * @param string $region a block region that exists on this page.
+     * @return boolean if fakeblock exists in a region.
+     */
+    public function region_has_fakeblock($region) {
+		if (!$this->is_known_region($region)) {
+            return false;
+        }
+        $blockcontents = $this->get_content_for_region($region, $this);
+		foreach ($blockcontents as $bc) {
+			if ($bc instanceof block_contents) {
+				if ($bc->has_class('fakeblock')) {
+					return true;
+				}
+			}
+		}
+		return false;
+    }
+	
     /**
      * Helper method used by get_content_for_region.
      * @param string $region region name
@@ -430,6 +451,7 @@ class block_manager {
             throw new coding_exception('block_manager has already prepared the blocks in region ' .
                     $region . 'for output. It is too late to add a fake block.');
         }
+		$bc->add_class('fakeblock');
         $this->extracontent[$region][] = $bc;
     }
 
