@@ -40,4 +40,20 @@ class qtype_multientries extends qtype_description {
     public function requires_qtypes() {
         return array('description');
     }
+
+    public function export_to_xml($question, qformat_xml $format, $extra=null) {
+        return ' ';
+    }
+
+    public function import_from_xml($data, $question, qformat_xml $format, $extra=null) {
+        $question_type = $data['@']['type'];
+        if ($question_type != $this->name()) {
+            return false;
+        }
+        $qo = $format->import_headers($data);
+        $qo->qtype = $question_type;
+        $qo->defaultmark = 0;
+        $qo->length = 0;
+        return $qo;
+    }
 }
