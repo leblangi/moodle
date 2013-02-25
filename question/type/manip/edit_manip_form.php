@@ -40,7 +40,7 @@ class qtype_manip_edit_form extends question_edit_form {
      * Add question-type specific form fields.
      *
      * @param object $mform the form being built.
-     */
+    */
     protected function definition_inner($mform) {
         global $PAGE;
 
@@ -64,10 +64,12 @@ class qtype_manip_edit_form extends question_edit_form {
         $mform->setType('minocc', PARAM_INT);
         $mform->addHelpButton('minocc', 'minocc', 'qtype_manip');
         $mform->addRule('minocc', get_string('required'), 'required', null, 'client');
+        $mform->setDefault('minocc', 1);
 
         $mform->addElement('text', 'maxocc', get_string('maxocc', 'qtype_manip'), array('size' => '4'));
         $mform->setType('maxocc', PARAM_INT);
         $mform->addHelpButton('maxocc', 'maxocc', 'qtype_manip');
+        $mform->addRule('maxocc', get_string('required'), 'required', null, 'client');
         $mform->setDefault('maxocc', 0);
 
         $mform->addElement('editor', 'feedbackcorrect', get_string('feedbackcorrect', 'qtype_manip'), array('rows' => 10), $this->editoroptions);
@@ -78,21 +80,6 @@ class qtype_manip_edit_form extends question_edit_form {
         $mform->setType('feedbackincorrect', PARAM_RAW);
         $mform->addHelpButton('feedbackincorrect', 'feedbackincorrect', 'qtype_manip');
     }
-
-    // If more granular fractions are desired, this would be the place to start adding such a feature.
-    /*
-    protected function get_per_answer_fields($mform, $label, $gradeoptions, &$repeatedoptions, &$answersoption) {
-        $repeated = array();
-        $repeated[] = $mform->createElement('header', 'answerhdr', $label);
-        $repeated[] = $mform->createElement('text', 'answer', get_string('answer', 'question'), array('size' => 80));
-        $repeated[] = $mform->createElement('select', 'fraction', get_string('grade'), $gradeoptions);
-        $repeated[] = $mform->createElement('editor', 'feedback', get_string('feedback', 'question'), array('rows' => 5), $this->editoroptions);
-        $repeatedoptions['answer']['type'] = PARAM_RAW;
-        $repeatedoptions['fraction']['default'] = 0;
-        $answersoption = 'answers';
-        return $repeated;
-    }
-    */
 
     public function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);

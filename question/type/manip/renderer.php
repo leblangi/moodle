@@ -53,7 +53,7 @@ class qtype_manip_renderer extends qtype_renderer {
         $result .= html_writer::tag('div', $files, array('class' => 'attachments'));
         $result .= html_writer::end_tag('div');
 
-		if ($this->is_first_qa($qa, $options) && empty($options->readonly)) {
+        if ($this->is_first_qa($qa, $options) && empty($options->readonly)) {
             $copytoall = html_writer::tag('input', null, array('id' => 'manip-button', 'type' => 'button',
                 'value' => get_string('copyfile', 'qtype_manip')));
             $copytoall .= $OUTPUT->help_icon('copyfile', 'qtype_manip');
@@ -100,16 +100,13 @@ class qtype_manip_renderer extends qtype_renderer {
         global $CFG, $PAGE;
         require_once($CFG->dirroot . '/lib/form/filemanager.php');
 
-        // TODO: voir si on peut limiter la taille du fichier.
         $pickeroptions = new stdClass();
         $pickeroptions->accepted_types = array('.docx');
+        $pickeroptions->maxbytes = -1; // TODO: See if we want to limit the maximum file size.
         $pickeroptions->mainfile = null;
         $pickeroptions->maxfiles = 1;
         $pickeroptions->itemid = $qa->prepare_response_files_draft_itemid('attachment', $options->context->id);
         $pickeroptions->context = $options->context;
-
-        // TODO: même ligne que deux lignes plus haut, mais c'est comme ça dans "essay". Pourquoi???
-        //$pickeroptions->itemid = $qa->prepare_response_files_draft_itemid('attachment', $options->context->id);
 
         $fm = new form_filemanager($pickeroptions);
         $filesrenderer = $this->page->get_renderer('core', 'files');

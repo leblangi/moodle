@@ -35,6 +35,11 @@ defined('MOODLE_INTERNAL') || die();
  */
 class qtype_manip extends question_type {
 
+    const CORRECT_ANSWER = 'Correct';
+    const INCORRECT_ANSWER = 'Incorrect';
+    const CORRECT_VALUE = 1.0;
+    const INCORRECT_VALUE = 0.0;
+
     public function extra_question_fields() {
         return array('question_manip', 'regex', 'minocc', 'maxocc', 'correct', 'incorrect');
     }
@@ -47,9 +52,6 @@ class qtype_manip extends question_type {
         global $DB;
         $result = new stdClass();
         $context = $question->context;
-        
-        //error_log(print_r($question, true));
-        //file_put_contents('/tmp/form.txt', print_r($question, true));
 
         // Fetch old answer ids so that we can reuse them
         $oldanswers = $DB->get_records('question_answers',
@@ -64,13 +66,9 @@ class qtype_manip extends question_type {
             $answer->feedback = '';
             $answer->id = $DB->insert_record('question_answers', $answer);
         }
-        
-        //debugging('ICI.1 :: ($question) :: '. print_r($question, true));
-        //debugging('ICI.2 :: ($question) :: '. var_export(get_object_vars($question), true));
-        //error_log('ICI.3 :: ($question) :: '. var_export(get_object_vars($question), true));
 
-        $answer->answer   = 'Correct'; //get_string('true', 'qtype_manip');
-        $answer->fraction = 1.0; // $question->correctanswer;
+        $answer->answer   = self::CORRECT_ANSWER;
+        $answer->fraction = self::CORRECT_VALUE;
         $answer->feedback = $this->import_or_save_files($question->feedbackcorrect,
                 $context, 'question', 'answerfeedback', $answer->id);
         $answer->feedbackformat = $question->feedbackcorrect['format'];
@@ -87,8 +85,8 @@ class qtype_manip extends question_type {
             $answer->id = $DB->insert_record('question_answers', $answer);
         }
 
-        $answer->answer   = 'Incorrect'; //get_string('false', 'qtype_manip');
-        $answer->fraction = 0.0; // 1 - (int)$question->correctanswer;
+        $answer->answer   = self::INCORRECT_ANSWER;
+        $answer->fraction = self::INCORRECT_VALUE;
         $answer->feedback = $this->import_or_save_files($question->feedbackincorrect,
                 $context, 'question', 'answerfeedback', $answer->id);
         $answer->feedbackformat = $question->feedbackincorrect['format'];
@@ -101,8 +99,6 @@ class qtype_manip extends question_type {
             $fs->delete_area_files($context->id, 'question', 'answerfeedback', $oldanswer->id);
             $DB->delete_records('question_answers', array('id' => $oldanswer->id));
         }
-
-        //debugging('$question :: '. print_r($question, true));
 
         // Save question options in question_manip table
         if ($options = $DB->get_record('question_manip', array('question' => $question->id))) {
@@ -123,8 +119,6 @@ class qtype_manip extends question_type {
             $DB->insert_record('question_manip', $options);
         }
 
-        // $this->save_hints($question); // TODO: à confirmer - pas de hints a priori
-
         return true;
     }
 
@@ -133,10 +127,8 @@ class qtype_manip extends question_type {
         $answers = $questiondata->options->answers;
         $question->feedbackcorrect = $answers[$questiondata->options->correct]->feedback;
         $question->feedbackincorrect = $answers[$questiondata->options->incorrect]->feedback;
-        $question->feedbackcorrectformat =
-                $answers[$questiondata->options->correct]->feedbackformat;
-        $question->feedbackincorrectformat =
-                $answers[$questiondata->options->incorrect]->feedbackformat;
+        $question->feedbackcorrectformat =  $answers[$questiondata->options->correct]->feedbackformat;
+        $question->feedbackincorrectformat = $answers[$questiondata->options->incorrect]->feedbackformat;
         $question->regex =  $questiondata->options->regex;
         $question->minocc =  $questiondata->options->minocc;
         $question->maxocc =  $questiondata->options->maxocc;
@@ -172,10 +164,9 @@ class qtype_manip extends question_type {
     }
 
     public function move_files($questionid, $oldcontextid, $newcontextid) {
-        // error_log('move_files!');
         parent::move_files($questionid, $oldcontextid, $newcontextid);
         $fs = get_file_storage();
-        // TODO: confirmer "graderinfo"
+        // TODO: confirm the use of the "graderinfo" term. Based on essay question but not used here. Still usefull or replace with with something else ?
         $fs->move_area_files_to_new_context($oldcontextid, $newcontextid, 'qtype_manip', 'graderinfo', $questionid);
         //$this->move_files_in_answers($questionid, $oldcontextid, $newcontextid);
     }
@@ -190,16 +181,10 @@ class qtype_manip extends question_type {
     }
 
     public function get_possible_responses($questiondata) {
-        /* TODO: soit utiliser des constantes pour les fractions (1.0 et 0.0),
-         *       soit permettre au prof de spécifier les fractions. */
         return array(
             $questiondata->id => array(
-                0 => new question_possible_response('Correct' /* get_string('correctanswer', 'qtype_manip') */,
-                        1.0 /* $questiondata->options->answers[$questiondata->options->correctanswer]->fraction*/
-                        ),
-                1 => new question_possible_response('Incorrect' /* get_string('incorrectanswer', 'qtype_manip') */,
-                        0.0 /* $questiondata->options->answers[$questiondata->options->incorrectanswer]->fraction */
-                        ),
+                0 => new question_possible_response(self::CORRECT_ANSWER, self::CORRECT_VALUE),
+                1 => new question_possible_response(self::INCORRECT_ANSWER, self::INCORRECT_VALUE),
                 null => question_possible_response::no_response()
             )
         );
@@ -291,7 +276,7 @@ class qtype_manip extends question_type {
         if (is_array($extraanswersfields)) {
             array_shift($extraanswersfields);
         }
-        foreach ($answers as $aid => $answer) {
+        foreach ($answers as $answer) {
             $ans = $format->import_answer($answer);
             if (!$this->has_html_answers()) {
                 $qo->answer[$a_count] = $ans->answer['text'];
@@ -301,9 +286,9 @@ class qtype_manip extends question_type {
             $qo->fraction[$a_count] = $ans->fraction;
 
             /// ****** BEGIN 'manip'-specific code
-            if ($ans->answer['text'] == 'Correct')
+            if ($ans->answer['text'] == self::CORRECT_ANSWER)
                 $varname = 'feedbackcorrect';
-            elseif ($ans->answer['text'] == 'Incorrect')
+            elseif ($ans->answer['text'] == self::INCORRECT_ANSWER)
                 $varname = 'feedbackincorrect';
             else
                 return false('Unknown answer value while importing manip question : '. $ans->answer['text']);
