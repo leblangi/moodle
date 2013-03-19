@@ -163,7 +163,9 @@ class qtype_manip_question extends question_graded_automatically {
     }
 
     public function get_valid_file_content_from_response(array $response) {
-        $stored_files = $response['attachment']->get_files();
+        if (!is_object($response['attachment']) || !$stored_files = $response['attachment']->get_files()) {
+            return null;
+        }
         $file = array_shift($stored_files);
 
         if (empty($file)) {
