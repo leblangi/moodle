@@ -163,14 +163,6 @@ class qtype_manip extends question_type {
         return array('attachment');
     }
 
-    public function move_files($questionid, $oldcontextid, $newcontextid) {
-        parent::move_files($questionid, $oldcontextid, $newcontextid);
-        $fs = get_file_storage();
-        // TODO: confirm the use of the "graderinfo" term. Based on essay question but not used here. Still usefull or replace with with something else ?
-        $fs->move_area_files_to_new_context($oldcontextid, $newcontextid, 'qtype_manip', 'graderinfo', $questionid);
-        //$this->move_files_in_answers($questionid, $oldcontextid, $newcontextid);
-    }
-
     protected function delete_files($questionid, $contextid) {
         parent::delete_files($questionid, $contextid);
         $this->delete_files_in_answers($questionid, $contextid);

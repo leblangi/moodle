@@ -102,7 +102,7 @@ class qtype_manip_renderer extends qtype_renderer {
 
         $pickeroptions = new stdClass();
         $pickeroptions->accepted_types = array('.docx');
-        $pickeroptions->maxbytes = -1; // TODO: See if we want to limit the maximum file size.
+        $pickeroptions->maxbytes = $CFG->maxbytes;
         $pickeroptions->mainfile = null;
         $pickeroptions->maxfiles = 1;
         $pickeroptions->itemid = $qa->prepare_response_files_draft_itemid('attachment', $options->context->id);

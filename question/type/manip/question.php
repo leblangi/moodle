@@ -56,14 +56,6 @@ class qtype_manip_question extends question_graded_automatically {
         return null;
     }
 
-
-    // If you want to force the type of question being evaluated in deferredfeedback.
-    /*
-    public function make_behaviour(question_attempt $qa, $preferredbehaviour) {
-        return question_engine::make_archetypal_behaviour('deferredfeedback', $qa);
-    }
-    */
-
     public function summarise_response(array $response) {
         if ($this->is_complete_response($response)) {
             return get_string('filesubmitted', 'qtype_manip');
@@ -92,13 +84,13 @@ class qtype_manip_question extends question_graded_automatically {
             $this->error = 'noanswer';
             return false;
         }
-        $stored_file = $response['attachment']->get_files();
-        if (!$stored_file) {
+        $stored_files = $response['attachment']->get_files();
+        if (!$stored_files) {
             $this->error = 'filenotsubmitted';
             return false;
         }
 
-        $file = array_shift($stored_file);
+        $file = array_shift($stored_files);
 
         $content = $file->get_content();
         if ($content === FALSE) {
@@ -109,7 +101,6 @@ class qtype_manip_question extends question_graded_automatically {
     }
 
     public function is_gradable_response(array $response) {
-        // TODO: validate the regex also here with $this->is_valid_regex()
         return $this->is_complete_response($response);
     }
 
@@ -128,43 +119,22 @@ class qtype_manip_question extends question_graded_automatically {
     }
 
     public function grade_response(array $response) {
-        $stored_file = $response['attachment']->get_files();
-        $file = array_shift($stored_file);
-
-        // ZipArchive seem to only be able to open files and stored_file does
-        // not let us read the file directly - so we have to copy_content_to
-        // somewhere else.
-        $zipfilename = tempnam(sys_get_temp_dir(), 'm');
-        if (!$file->copy_content_to($zipfilename)) {
-            // TODO: Log this error which, really, should not happen.
-            return array(0, question_state::$invalid); // TODO: test this out
-        }
-
-        $zip = new ZipArchive;
-        if ($zip->open($zipfilename) === TRUE) {
-            $content =  $zip->getFromName('word/document.xml');
-            $zip->close();
-        } else {
-            // TODO: LOG TO COURSE (if it's possible to find course id - otherwise
-            // log to system log)
-            debugging('zip file could not be opened');
-            return array(0, question_state::$invalid); // TODO: test this out
+        $content = $this->get_valid_file_content_from_response($response);
+        if (empty($content)) {
+            return array(0, question_state::$invalid);
         }
 
         $regex = "/" . $this->regex . "/";
         $result = preg_match_all($regex, $content, $out);
 
         if (!$this->is_valid_regex($result)) {
-            return array(0, question_state::$invalid); // TODO: test this out
+            return array(0, question_state::$invalid);
         // If the minimum occurence is reached and if the maximum is not exceeded or unlimited, the answer is correct.
         } elseif ($result >= $this->minocc && ((!empty($this->minocc) && $result <= $this->maxocc) || empty($this->maxocc))) {
             $fraction = qtype_manip::CORRECT_VALUE;
         } else {
             $fraction = qtype_manip::INCORRECT_VALUE;
         }
-
-        // Delete temporary file
-        unlink($zipfilename);
 
         return array($fraction, question_state::graded_state_for_fraction($fraction));
     }
@@ -190,6 +160,35 @@ class qtype_manip_question extends question_graded_automatically {
         } else {
             return true;
         }
+    }
+
+    public function get_valid_file_content_from_response(array $response) {
+        $stored_files = $response['attachment']->get_files();
+        $file = array_shift($stored_files);
+
+        if (empty($file)) {
+            return null;
+        }
+        // ZipArchive seem to only be able to open files and stored_files does
+        // not let us read the files directly - so we have to copy_content_to
+        // somewhere else.
+        $zipfilename = tempnam(sys_get_temp_dir(), 'm');
+        if (!$file->copy_content_to($zipfilename)) {
+            error_log('ERROR: cannot write in temp folder');
+            // Delete temporary file
+            unlink($zipfilename);
+            return null;
+        }
+
+        $zip = new ZipArchive;
+        $content = null;
+        if ($zip->open($zipfilename) === TRUE) {
+            $content =  $zip->getFromName('word/document.xml');
+            $zip->close();
+        }
+        // Delete temporary file
+        unlink($zipfilename);
+        return $content;
     }
 
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
