@@ -179,3 +179,8 @@ body {margin:auto 0px;width:auto;}
 
 .pagelayout-report #page-content #region-main {overflow:auto;}
 .pagelayout-report #page-content #region-main .region-content {overflow:visible;}
+
+.pagelayout-login .logoscs {
+    margin: 0 auto;
+    text-align:center;
+}
