@@ -32,6 +32,12 @@ $string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><
 $string['configtitle'] = 'Nonzero settings';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Any CSS you enter here will be added to every page allowing your to easily customise this theme.';
+$string['logocs01'] = 'Bois-Francs School Board';
+$string['logocs02'] = 'Chemin-du-Roy School Board';
+$string['logocs03'] = 'Énergie School Board';
+$string['logocs04'] = 'Riveraine School Board';
+$string['logocs05'] = 'Chênes School Board';
+$string['logocs06'] = 'With the financial participation of Québec';
 $string['regionprewidth'] = 'Left column width';
 $string['regionprewidthdesc'] = 'This sets the width of the block region that forms the left column. This column is displayed in the middle of the page while using blog layout';
 $string['regionpostwidth'] = 'Right column width';
