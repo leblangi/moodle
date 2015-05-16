@@ -36,7 +36,7 @@ $slowprogress->start_progress('', 1, 1);
 
 // Restore of large courses requires extra memory. Use the amount configured
 // in admin settings.
-raise_memory_limit(MEMORY_EXTRA);
+raise_memory_limit(MEMORY_HUGE);
 
 if ($stage & restore_ui::STAGE_CONFIRM + restore_ui::STAGE_DESTINATION) {
     $restore = restore_ui::engage_independent_stage($stage, $contextid);
